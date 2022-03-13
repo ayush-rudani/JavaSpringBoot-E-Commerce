@@ -1,13 +1,17 @@
 package com.ec.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 public class User {
 	@Id
 	int id;
+	@NotBlank(message = "Please enter your name")
 	private String name;
+	@NotBlank(message = "Please enter your phone number")
 	private String phone_no;
+	@NotBlank(message = "Please enter your email")
 	private String email;
 	private String address;
 	private String pic;
