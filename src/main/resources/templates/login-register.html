@@ -1,12 +1,13 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
 
 <!-- login-register31:27-->
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login Register || limupa - Digital Products Store eCommerce Bootstrap 4 Template</title>
+    <title>Login Register || limupa - Digital Products Store
+        eCommerce Bootstrap 4 Template</title>
     <meta name="description" content="">
     <div th:replace="css-link :: css"></div>
 </head>
@@ -39,22 +40,23 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
                         <!-- Login Form s-->
-                        <form th:action="@{/}">
+                        <form th:action="@{/do_login}">
                             <div class="login-form">
                                 <h4 class="login-title">Login</h4>
                                 <div class="row">
+
                                     <div class="col-md-12 col-12 mb-20">
-                                        <label>Email Address*</label>
-                                        <input class="mb-0" type="email" placeholder="Email Address">
+                                        <label>Email Address*</label> <input class="mb-0" type="email"
+                                            placeholder="Email Address">
                                     </div>
                                     <div class="col-12 mb-20">
-                                        <label>Password</label>
-                                        <input class="mb-0" type="password" placeholder="Password">
+                                        <label>Password</label> <input class="mb-0" type="password"
+                                            placeholder="Password">
                                     </div>
                                     <div class="col-md-8">
                                         <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
-                                            <input type="checkbox" id="remember_me">
-                                            <label for="remember_me">Remember me</label>
+                                            <input type="checkbox" id="remember_me"> <label for="remember_me">Remember
+                                                me</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
@@ -74,25 +76,44 @@
                             <div class="login-form">
                                 <h4 class="login-title">Register</h4>
                                 <div class="row">
+
+                                    <div th:if="${session.message}" th:classappend="${session.message.type}"
+                                        class="col-md-12 alert" role="alert" th:text="${session.message.content}">
+                                        <th:block th:text="${#session.removeAttributr('message')}"></th:block>
+                                    </div>
+
+                                    <!-- <div class="col-md-6 col-12 mb-20">
+                                        <label>Full Name</label> <input class="mb-0"
+                                            th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}" type="text"
+                                            name="name" placeholder="Full Name">
+                                    </div> -->
+
                                     <div class="col-md-6 col-12 mb-20">
-                                        <label>Full Name</label>
-                                        <input class="mb-0" type="text" placeholder="Full Name" th:value="${User.name}"
+                                        <label>Full Name</label> <input class="mb-0" type="text" placeholder="Full Name"
                                             name="name">
-                                        <p th:each="e" :${#fields.error('name')}" th:text="${e}"></p>
                                     </div>
+                                    <!-- 
                                     <div class="col-md-12 mb-20">
-                                        <label>Email Address*</label>
-                                        <input class="mb-0" type="email" placeholder="Email Address"
-                                            th:value="${User.email}" name="email">
+                                        <label>Email Address*</label> <input class="mb-0"
+                                            th:classappend="${#fields.hasErrors('email') ? 'is-invalid':' '}"
+                                            type="email" name="email" placeholder="Email Address">
+                                    </div> -->
+
+                                    <div class="col-md-12 mb-20">
+                                        <label>Email Address*</label> <input class="mb-0" type="email"
+                                            placeholder="Email Address" name="email">
                                     </div>
+
                                     <div class="col-md-6 mb-20">
-                                        <label>Password</label>
-                                        <input class="mb-0" type="password" placeholder="Password">
+                                        <label>Password</label> <input class="mb-0" type="password" name="password"
+                                            placeholder="Password">
                                     </div>
+
                                     <div class="col-md-6 mb-20">
-                                        <label>Confirm Password</label>
-                                        <input class="mb-0" type="password" placeholder="Confirm Password">
+                                        <label>Confirm Password</label> <input class="mb-0" type="password"
+                                            placeholder="Confirm Password">
                                     </div>
+
                                     <div class="col-12">
                                         <button class="register-button mt-0">Register</button>
                                     </div>
