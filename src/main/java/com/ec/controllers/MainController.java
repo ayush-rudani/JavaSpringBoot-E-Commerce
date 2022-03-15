@@ -14,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class MainController {
@@ -29,8 +30,8 @@ public class MainController {
     // return "index";
     // }
 
-    @RequestMapping("/signup")
-    public String showLogin(Model model) {
+    @RequestMapping(value = "/signup", method = RequestMethod.GET)
+    public String showLogin(@ModelAttribute("user") User user, Model model) {
         model.addAttribute("user", new User());
         System.out.println("Rediecting to Form");
         return "login-register";
