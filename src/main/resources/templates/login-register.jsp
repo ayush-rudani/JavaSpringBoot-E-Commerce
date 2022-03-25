@@ -1,7 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="zxx" xmlns:th="http://www.thymeleaf.org">
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<!-- login-register31:27-->
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<!-- login-register-->
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +12,8 @@
     <title>Login Register || limupa - Digital Products Store
         eCommerce Bootstrap 4 Template</title>
     <meta name="description" content="">
-    <div th:replace="css-link :: css"></div>
+    <!-- <div replace="css-link :: css"></div>-->
+<%@include file="css-link.html"%> 
 </head>
 
 <body>
@@ -18,7 +22,7 @@
     <div class="body-wrapper">
 
         <!-- Header Area End Here -->
-        <div th:replace="header :: header"></div>
+        <!-- <div replace="header :: header"></div> -->
         <!-- Header Area End Here -->
 
 
@@ -40,7 +44,7 @@
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
                         <!-- Login Form s-->
-                        <form th:action="@{/do_login}">
+                        <form action="@{/do_login}">
                             <div class="login-form">
                                 <h4 class="login-title">Login</h4>
                                 <div class="row">
@@ -72,26 +76,24 @@
 
 
                     <div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-                        <form th:action="@{/do_register}" method="post" th:object="${user}">
+                        <form action="@{/do_register}" method="post" object="${user}">
                             <div class="login-form">
                                 <h4 class="login-title">Register</h4>
                                 <div class="row">
 
-                                    <div th:if="${session.message}" th:classappend="${session.message.type}"
-                                        class="col-md-12 alert" role="alert" th:text="${session.message.content}">
+                                    <!-- <div  if="${session.message}"  classappend="${session.message.type}"
+                                        class="col-md-12 alert" role="alert"  text="${session.message.content}">
                                         <th:block th:text="${#session.removeAttributr('message')}"></th:block>
-                                    </div>
-
-                                    <!-- <div class="col-md-6 col-12 mb-20">
-                                        <label>Full Name</label> <input class="mb-0"
-                                            th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}" type="text"
-                                            name="name" placeholder="Full Name">
                                     </div> -->
 
                                     <div class="col-md-6 col-12 mb-20">
-                                        <label>Full Name</label> <input class="mb-0"
-                                            th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}" type="text"
-                                            th:field="*{name}" placeholder="Full Name" name="name">
+                                        <label>Full Name</label> <input class="mb-0" type="text" name="name"
+                                            placeholder="Full Name">
+                                    </div>
+
+                                    <div class="col-md-6 col-12 mb-20">
+                                        <label>Full Name</label> <input class="mb-0" type="text" field="*{name}"
+                                            placeholder="Full Name" name="name">
                                     </div>
                                     <!-- 
                                     <div class="col-md-12 mb-20">
@@ -128,12 +130,12 @@
         <!-- Login Content Area End Here -->
 
         <!-- Begin Footer Area -->
-        <div th:replace="footer :: footer"></div>
+        <!-- <div th:replace="footer :: footer"></div> -->
         <!-- Footer Area End Here -->
 
     </div>
     <!-- Body Wrapper End Here -->
-    <div th:replace="js-link :: js"></div>
+    <!-- <div replace="js-link :: js"></div> -->
 </body>
 
 <!-- login-register31:27-->

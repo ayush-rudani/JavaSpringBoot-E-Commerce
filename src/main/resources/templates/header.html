@@ -1,5 +1,4 @@
-<header th:fragment="header">
-
+<header>
     <div class="header-top">
         <div class="container">
             <div class="row">
@@ -49,10 +48,11 @@
                                 </div>
                                 <div class="language ht-language">
                                     <ul class="ht-setting-list">
-                                        <li class="active"><a href="#"><img th:src="@{/images/menu/flag-icon/1.jpg}"
+                                        <li class="active"><a href="#"><img  src="/images/menu/flag-icon/1.jpg"
                                                     alt="">English</a></li>
-                                        <li><a href="#"><img th:src="@{/images/menu/flag-icon/2.jpg}"
-                                                    alt="">FranÃ§ais</a></li>
+                                        <li><a href="#"><img  src="/images/menu/flag-icon/2.jpg"
+                                                    alt="">FranÃ§ais</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -72,7 +72,7 @@
                 <!-- Begin Header Logo Area -->
                 <div class="col-lg-3">
                     <div class="logo pb-sm-30 pb-xs-30">
-                        <a href="index.html"> <img th:src="@{/images/menu/logo/1.jpg}" alt="">
+                        <a href="index.html"> <img  src="/images/menu/logo/1.jpg" alt="">
                         </a>
                     </div>
                 </div>
@@ -177,7 +177,7 @@
                                 <div class="minicart">
                                     <ul class="minicart-product-list">
                                         <li><a href="single-product" class="minicart-product-image"> <img
-                                                    src="@{/images/product/small-size/5.jpg}" alt="cart products">
+                                                    src="/images/product/small-size/5.jpg" alt="cart products">
                                             </a>
                                             <div class="minicart-product-details">
                                                 <h6>
@@ -190,7 +190,7 @@
                                             </button>
                                         </li>
                                         <li><a href="single-product" class="minicart-product-image"> <img
-                                                    src="@{/images/product/small-size/6.jpg}" alt="cart products">
+                                                    src="/images/product/small-size/6.jpg" alt="cart products">
                                             </a>
                                             <div class="minicart-product-details">
                                                 <h6>
@@ -208,7 +208,8 @@
                                     </p>
                                     <div class="minicart-button">
                                         <a href="shopping-cart.html"
-                                            class="li-button li-button-fullwidth li-button-dark"> <span>View
+                                            class="li-button li-button-fullwidth li-button-dark">
+                                            <span>View
                                                 Full Cart</span>
                                         </a> <a href="checkout.html" class="li-button li-button-fullwidth">
                                             <span>Checkout</span>
