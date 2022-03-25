@@ -1,19 +1,13 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
-
-<!doctype html>
-<html class="no-js" lang="zxx">
-
-<!-- login-register-->
-
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Login Register</title>
-<meta name="description" content="">
+<meta charset="ISO-8859-1">
+<title>LogIn | Register</title>
 <%@include file="css-link.html"%>
 </head>
-
 <body>
 
 	<!-- Begin Body Wrapper -->
@@ -42,7 +36,7 @@
 				<div class="row">
 					<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
 						<!-- Login Form s-->
-						<form action="@{/do_login}">
+						<form action="/do_login">
 							<div class="login-form">
 								<h4 class="login-title">Login</h4>
 								<div class="row">
@@ -62,7 +56,7 @@
 										</div>
 									</div>
 									<div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-										<a href="#"> Forgotten pasward?</a>
+										<a href="#"> Forgotten password?</a>
 									</div>
 									<div class="col-md-12">
 										<button class="register-button mt-0">Login</button>
@@ -74,15 +68,10 @@
 
 
 					<div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
-						<form action="@{/do_register}" method="post" object="${user}">
+						<form action="/do_register" method="post">
 							<div class="login-form">
 								<h4 class="login-title">Register</h4>
 								<div class="row">
-
-									<!-- <div  if="${session.message}"  classappend="${session.message.type}"
-                                        class="col-md-12 alert" role="alert"  text="${session.message.content}">
-                                        <th:block th:text="${#session.removeAttributr('message')}"></th:block>
-                                    </div> -->
 
 									<div class="col-md-6 col-12 mb-20">
 										<label>Full Name</label> <input class="mb-0" type="text"
@@ -91,14 +80,8 @@
 
 									<div class="col-md-6 col-12 mb-20">
 										<label>Full Name</label> <input class="mb-0" type="text"
-											field="*{name}" placeholder="Full Name" name="name">
+											placeholder="Full Name" name="name">
 									</div>
-									<!-- 
-                                    <div class="col-md-12 mb-20">
-                                        <label>Email Address*</label> <input class="mb-0"
-                                            th:classappend="${#fields.hasErrors('email') ? 'is-invalid':' '}"
-                                            type="email" name="email" placeholder="Email Address">
-                                    </div> -->
 
 									<div class="col-md-12 mb-20">
 										<label>Email Address*</label> <input class="mb-0" type="email"
@@ -135,7 +118,4 @@
 	<!-- Body Wrapper End Here -->
 	<%@include file="js-link.html"%>
 </body>
-
-<!-- login-register31:27-->
-
 </html>

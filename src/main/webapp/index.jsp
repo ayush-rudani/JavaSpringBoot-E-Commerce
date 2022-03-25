@@ -1,22 +1,20 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>Home Version One || limupa - Digital Products Store
-	eCommerce Bootstrap 4 Template</title>
-<meta name="description" content="">
+<meta charset="ISO-8859-1">
+<title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<div  replace="css-link :: css"></div>
+<%@include file="css-link.html"%>
 </head>
-
 <body>
 
 	<div class="body-wrapper">
 
 		<!-- Header Area End Here -->
-		<div  replace="header :: header"></div>
+		<%@include file="header.html"%>
 		<!-- Header Area End Here -->
 
 
@@ -93,12 +91,12 @@
 					<div class="col-lg-4 col-md-4 text-center pt-xs-30">
 						<div class="li-banner">
 							<a href="#"> <img
-								src="/JT-Project-S/static/images/banner/1_1.jpg" alt="">
+								src="/images/banner/1_1.jpg" alt="">
 							</a>
 						</div>
 						<div class="li-banner mt-15 mt-sm-30 mt-xs-30">
 							<a href="#"> <img
-								src="/JT-Project-S/static/images/banner/1_2.jpg" alt="">
+								src="/images/banner/1_2.jpg" alt="">
 							</a>
 						</div>
 					</div>
@@ -134,7 +132,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/1.jpg"
+												src="/images/product/large-size/1.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -182,7 +180,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/2.jpg"
+												src="/images/product/large-size/2.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -232,7 +230,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/3.jpg"
+												src="/images/product/large-size/3.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -280,7 +278,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/4.jpg"
+												src="/images/product/large-size/4.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -330,7 +328,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/5.jpg"
+												src="/images/product/large-size/5.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -378,7 +376,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/6.jpg"
+												src="/images/product/large-size/6.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -434,7 +432,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/12.jpg"
+												src="/images/product/large-size/12.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -482,7 +480,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/11.jpg"
+												src="/images/product/large-size/11.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -532,7 +530,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/10.jpg"
+												src="/images/product/large-size/10.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -580,7 +578,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/9.jpg"
+												src="/images/product/large-size/9.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -630,7 +628,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/8.jpg"
+												src="/images/product/large-size/8.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -678,7 +676,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/7.jpg"
+												src="/images/product/large-size/7.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -734,7 +732,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/3.jpg"
+												src="/images/product/large-size/3.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -782,7 +780,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/5.jpg"
+												src="/images/product/large-size/5.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -832,7 +830,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/7.jpg"
+												src="/images/product/large-size/7.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -880,7 +878,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/9.jpg"
+												src="/images/product/large-size/9.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -930,7 +928,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/11.jpg"
+												src="/images/product/large-size/11.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -978,7 +976,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/12.jpg"
+												src="/images/product/large-size/12.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1030,16 +1028,16 @@
 			</div>
 		</div>
 		<!-- Product Area End Here -->
-		<!-- Begin Li's /JT-Project-S/static Banner Area -->
-		<div class="li-/JT-Project-S/static-banner">
+		<!-- Begin Li's  Banner Area -->
+		<div class="li--banner">
 			<div class="container">
 				<div class="row">
 					<!-- Begin Single Banner Area -->
 					<div class="col-lg-4 col-md-4 text-center">
 						<div class="single-banner">
 							<a href="#"> <img
-								src="/JT-Project-S/static/images/banner/1_3.jpg"
-								alt="Li's /JT-Project-S/static Banner">
+								src="/images/banner/1_3.jpg"
+								alt="Li's  Banner">
 							</a>
 						</div>
 					</div>
@@ -1048,8 +1046,8 @@
 					<div class="col-lg-4 col-md-4 text-center pt-xs-30">
 						<div class="single-banner">
 							<a href="#"> <img
-								src="/JT-Project-S/static/images/banner/1_4.jpg"
-								alt="Li's /JT-Project-S/static Banner">
+								src="/images/banner/1_4.jpg"
+								alt="Li's  Banner">
 							</a>
 						</div>
 					</div>
@@ -1058,8 +1056,8 @@
 					<div class="col-lg-4 col-md-4 text-center pt-xs-30">
 						<div class="single-banner">
 							<a href="#"> <img
-								src="/JT-Project-S/static/images/banner/1_5.jpg"
-								alt="Li's /JT-Project-S/static Banner">
+								src="/images/banner/1_5.jpg"
+								alt="Li's  Banner">
 							</a>
 						</div>
 					</div>
@@ -1067,7 +1065,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Li's /JT-Project-S/static Banner Area End Here -->
+		<!-- Li's  Banner Area End Here -->
 		<!-- Begin Li's Laptop Product Area -->
 		<section class="product-area li-laptop-product pt-60 pb-45">
 			<div class="container">
@@ -1092,7 +1090,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/1.jpg"
+												src="/images/product/large-size/1.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1140,7 +1138,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/2.jpg"
+												src="/images/product/large-size/2.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1190,7 +1188,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/3.jpg"
+												src="/images/product/large-size/3.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1238,7 +1236,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/4.jpg"
+												src="/images/product/large-size/4.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1288,7 +1286,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/5.jpg"
+												src="/images/product/large-size/5.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1336,7 +1334,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/6.jpg"
+												src="/images/product/large-size/6.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1413,7 +1411,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/3.jpg"
+												src="/images/product/large-size/3.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1461,7 +1459,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/5.jpg"
+												src="/images/product/large-size/5.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1511,7 +1509,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/7.jpg"
+												src="/images/product/large-size/7.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1559,7 +1557,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/9.jpg"
+												src="/images/product/large-size/9.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1609,7 +1607,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/11.jpg"
+												src="/images/product/large-size/11.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1657,7 +1655,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/11.jpg"
+												src="/images/product/large-size/11.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -1710,16 +1708,16 @@
 			</div>
 		</section>
 		<!-- Li's TV & Audio Product Area End Here -->
-		<!-- Begin Li's /JT-Project-S/static Home Area -->
-		<div class="li-/JT-Project-S/static-home">
+		<!-- Begin Li's  Home Area -->
+		<div class="li--home">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<!-- Begin Li's /JT-Project-S/static Home Image Area -->
-						<div class="li-/JT-Project-S/static-home-image"></div>
-						<!-- Li's /JT-Project-S/static Home Image Area End Here -->
-						<!-- Begin Li's /JT-Project-S/static Home Content Area -->
-						<div class="li-/JT-Project-S/static-home-content">
+						<!-- Begin Li's  Home Image Area -->
+						<div class="li--home-image"></div>
+						<!-- Li's  Home Image Area End Here -->
+						<!-- Begin Li's  Home Content Area -->
+						<div class="li--home-content">
 							<p>
 								Sale Offer<span>-20% Off</span>This Week
 							</p>
@@ -1732,12 +1730,12 @@
 								<a href="shop-left-sidebar.html" class="links">Shopping Now</a>
 							</div>
 						</div>
-						<!-- Li's /JT-Project-S/static Home Content Area End Here -->
+						<!-- Li's  Home Content Area End Here -->
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Li's /JT-Project-S/static Home Area End Here -->
+		<!-- Li's  Home Area End Here -->
 		<!-- Begin Li's Trending Product Area -->
 		<section class="product-area li-trending-product pt-60 pb-45">
 			<div class="container">
@@ -1766,7 +1764,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/2.jpg"
+														src="/images/product/large-size/2.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -1815,7 +1813,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/4.jpg"
+														src="/images/product/large-size/4.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -1866,7 +1864,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/6.jpg"
+														src="/images/product/large-size/6.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -1915,7 +1913,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/8.jpg"
+														src="/images/product/large-size/8.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -1966,7 +1964,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/10.jpg"
+														src="/images/product/large-size/10.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2015,7 +2013,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/12.jpg"
+														src="/images/product/large-size/12.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2072,7 +2070,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/11.jpg"
+														src="/images/product/large-size/11.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2121,7 +2119,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/7.jpg"
+														src="/images/product/large-size/7.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2172,7 +2170,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/9.jpg"
+														src="/images/product/large-size/9.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2221,7 +2219,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/5.jpg"
+														src="/images/product/large-size/5.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2272,7 +2270,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/7.jpg"
+														src="/images/product/large-size/7.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2321,7 +2319,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/5.jpg"
+														src="/images/product/large-size/5.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2378,7 +2376,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/3.jpg"
+														src="/images/product/large-size/3.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2427,7 +2425,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/7.jpg"
+														src="/images/product/large-size/7.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2478,7 +2476,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/9.jpg"
+														src="/images/product/large-size/9.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2527,7 +2525,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/1.jpg"
+														src="/images/product/large-size/1.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2578,7 +2576,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/11.jpg"
+														src="/images/product/large-size/11.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2627,7 +2625,7 @@
 											<div class="single-product-wrap">
 												<div class="product-image">
 													<a href="single-product"> <img
-														src="/JT-Project-S/static/images/product/large-size/9.jpg"
+														src="/images/product/large-size/9.jpg"
 														alt="Li's Product Image">
 													</a> <span class="sticker">New</span>
 												</div>
@@ -2703,7 +2701,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/11.jpg"
+												src="/images/product/large-size/11.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -2751,7 +2749,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/7.jpg"
+												src="/images/product/large-size/7.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -2801,7 +2799,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/9.jpg"
+												src="/images/product/large-size/9.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -2849,7 +2847,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/5.jpg"
+												src="/images/product/large-size/5.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -2899,7 +2897,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/7.jpg"
+												src="/images/product/large-size/7.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -2947,7 +2945,7 @@
 									<div class="single-product-wrap">
 										<div class="product-image">
 											<a href="single-product"> <img
-												src="/JT-Project-S/static/images/product/large-size/5.jpg"
+												src="/images/product/large-size/5.jpg"
 												alt="Li's Product Image">
 											</a> <span class="sticker">New</span>
 										</div>
@@ -3003,7 +3001,7 @@
 
 
 		<!-- Begin Footer Area -->
-		<div  replace="footer :: footer"></div>
+		<%@include file="footer.html"%>
 		<!-- Footer Area End Here -->
 
 
@@ -3025,64 +3023,64 @@
 									<div class="product-details-images slider-navigation-1">
 										<div class="lg-image">
 											<img
-												src="/JT-Project-S/static/images/product/large-size/1.jpg"
+												src="/images/product/large-size/1.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
 											<img
-												src="/JT-Project-S/static/images/product/large-size/2.jpg"
+												src="/images/product/large-size/2.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
 											<img
-												src="/JT-Project-S/static/images/product/large-size/3.jpg"
+												src="/images/product/large-size/3.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
 											<img
-												src="/JT-Project-S/static/images/product/large-size/4.jpg"
+												src="/images/product/large-size/4.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
 											<img
-												src="/JT-Project-S/static/images/product/large-size/5.jpg"
+												src="/images/product/large-size/5.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
 											<img
-												src="/JT-Project-S/static/images/product/large-size/6.jpg"
+												src="/images/product/large-size/6.jpg"
 												alt="product image">
 										</div>
 									</div>
 									<div class="product-details-thumbs slider-thumbs-1">
 										<div class="sm-image">
 											<img
-												src="/JT-Project-S/static/images/product/small-size/1.jpg"
+												src="/images/product/small-size/1.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
 											<img
-												src="/JT-Project-S/static/images/product/small-size/2.jpg"
+												src="/images/product/small-size/2.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
 											<img
-												src="/JT-Project-S/static/images/product/small-size/3.jpg"
+												src="/images/product/small-size/3.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
 											<img
-												src="/JT-Project-S/static/images/product/small-size/4.jpg"
+												src="/images/product/small-size/4.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
 											<img
-												src="/JT-Project-S/static/images/product/small-size/5.jpg"
+												src="/images/product/small-size/5.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
 											<img
-												src="/JT-Project-S/static/images/product/small-size/6.jpg"
+												src="/images/product/small-size/6.jpg"
 												alt="product image thumb">
 										</div>
 									</div>
@@ -3173,9 +3171,6 @@
 	</div>
 	<!-- Body Wrapper End Here -->
 
-	<div  replace="js-link :: js"></div>
+	<%@include file="js-link.html"%>
 </body>
-
-<!-- index30:23-->
-
 </html>
