@@ -7,7 +7,6 @@ import com.ec.models.User;
 import com.ec.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class MainController {
 
-    @Autowired
-    private BCryptPasswordEncoder passwordEncoder;
     @Autowired
     private UserService userService;
 
@@ -52,7 +49,7 @@ public class MainController {
         System.out.println(user);
 
         user.setUser_type("USER");
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        // user.setPassword();
 
         userService.saveUser(user);
 

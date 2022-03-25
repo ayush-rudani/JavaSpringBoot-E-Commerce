@@ -1,8 +1,6 @@
 package com.ec.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 public class User {
