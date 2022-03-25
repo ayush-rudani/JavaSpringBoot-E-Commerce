@@ -17,6 +17,7 @@
 		<%@include file="header.html"%>
 		<!-- Header Area End Here -->
 
+		<%-- <div>Hi i am here: ${sessionScope.user.name}</div> --%>
 
 		<!-- Begin Slider With Banner Area -->
 		<div class="slider-with-banner">
@@ -90,13 +91,11 @@
 					<!-- Begin Li Banner Area -->
 					<div class="col-lg-4 col-md-4 text-center pt-xs-30">
 						<div class="li-banner">
-							<a href="#"> <img
-								src="/images/banner/1_1.jpg" alt="">
+							<a href="#"> <img src="/images/banner/1_1.jpg" alt="">
 							</a>
 						</div>
 						<div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-							<a href="#"> <img
-								src="/images/banner/1_2.jpg" alt="">
+							<a href="#"> <img src="/images/banner/1_2.jpg" alt="">
 							</a>
 						</div>
 					</div>
@@ -1035,8 +1034,7 @@
 					<!-- Begin Single Banner Area -->
 					<div class="col-lg-4 col-md-4 text-center">
 						<div class="single-banner">
-							<a href="#"> <img
-								src="/images/banner/1_3.jpg"
+							<a href="#"> <img src="/images/banner/1_3.jpg"
 								alt="Li's  Banner">
 							</a>
 						</div>
@@ -1045,8 +1043,7 @@
 					<!-- Begin Single Banner Area -->
 					<div class="col-lg-4 col-md-4 text-center pt-xs-30">
 						<div class="single-banner">
-							<a href="#"> <img
-								src="/images/banner/1_4.jpg"
+							<a href="#"> <img src="/images/banner/1_4.jpg"
 								alt="Li's  Banner">
 							</a>
 						</div>
@@ -1055,8 +1052,7 @@
 					<!-- Begin Single Banner Area -->
 					<div class="col-lg-4 col-md-4 text-center pt-xs-30">
 						<div class="single-banner">
-							<a href="#"> <img
-								src="/images/banner/1_5.jpg"
+							<a href="#"> <img src="/images/banner/1_5.jpg"
 								alt="Li's  Banner">
 							</a>
 						</div>
@@ -3022,64 +3018,54 @@
 								<div class="product-details-left">
 									<div class="product-details-images slider-navigation-1">
 										<div class="lg-image">
-											<img
-												src="/images/product/large-size/1.jpg"
+											<img src="/images/product/large-size/1.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
-											<img
-												src="/images/product/large-size/2.jpg"
+											<img src="/images/product/large-size/2.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
-											<img
-												src="/images/product/large-size/3.jpg"
+											<img src="/images/product/large-size/3.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
-											<img
-												src="/images/product/large-size/4.jpg"
+											<img src="/images/product/large-size/4.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
-											<img
-												src="/images/product/large-size/5.jpg"
+											<img src="/images/product/large-size/5.jpg"
 												alt="product image">
 										</div>
 										<div class="lg-image">
-											<img
-												src="/images/product/large-size/6.jpg"
+											<img src="/images/product/large-size/6.jpg"
 												alt="product image">
 										</div>
 									</div>
 									<div class="product-details-thumbs slider-thumbs-1">
 										<div class="sm-image">
-											<img
-												src="/images/product/small-size/1.jpg"
+											<img src="/images/product/small-size/1.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
-											<img
-												src="/images/product/small-size/2.jpg"
+											<img src="/images/product/small-size/2.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
-											<img
-												src="/images/product/small-size/3.jpg"
+											<img src="/images/product/small-size/3.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
-											<img
-												src="/images/product/small-size/4.jpg"
+											<img src="/images/product/small-size/4.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
-											<img
-												src="/images/product/small-size/5.jpg"
+											<img src="/images/product/small-size/5.jpg"
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
-											<img src="/images/product/small-size/6.jpg" alt="product image thumb">
+											<img src="/images/product/small-size/6.jpg"
+												alt="product image thumb">
 										</div>
 									</div>
 								</div>

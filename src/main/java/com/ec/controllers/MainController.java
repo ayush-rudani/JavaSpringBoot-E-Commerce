@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -72,14 +73,17 @@ public class MainController {
 
 		user.setUser_type("USER");
 		// user.setPassword();
-
 		// session.setAttribute("temp1", "hello user");
 		userService.saveUser(user);
-
 		model.addAttribute("user", new User());
 		session.setAttribute("message", new Message("Successfully Registered!!", "alert-success"));
-
 		// User user1 = userService.saveUser(user);
+		return "redirect:/signup";
+	}
+
+	@GetMapping("/logout")
+	public String Logout(HttpSession session) {
+		session.invalidate();
 		return "redirect:/signup";
 	}
 
