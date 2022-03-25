@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,7 +18,7 @@
 		<!-- Header Area End Here -->
 
 
-		<!-- Begin Li's Breadcrumb Area -->
+		<!-- Begin Breadcrumb Area -->
 		<div class="breadcrumb-area">
 			<div class="container">
 				<div class="breadcrumb-content">
@@ -29,25 +29,37 @@
 				</div>
 			</div>
 		</div>
-		<!-- Li's Breadcrumb Area End Here -->
+		<!-- Breadcrumb Area End Here -->
 		<!-- Begin Login Content Area -->
 		<div class="page-section mb-60">
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+
+
 						<!-- Login Form s-->
-						<form action="/do_login">
+						<form action="/do_login" method="POST">
 							<div class="login-form">
 								<h4 class="login-title">Login</h4>
 								<div class="row">
 
+									<c:if test="${sessionScope.message != null}">
+										<div class="col-md-12 alert ${sessionScope.message.type}"
+											role="alert">
+											${sessionScope.message.content}
+											<%
+											session.removeAttribute("message");
+											%>
+										</div>
+									</c:if>
+
 									<div class="col-md-12 col-12 mb-20">
 										<label>Email Address*</label> <input class="mb-0" type="email"
-											placeholder="Email Address">
+											name="email" placeholder="Email Address">
 									</div>
 									<div class="col-12 mb-20">
 										<label>Password</label> <input class="mb-0" type="password"
-											placeholder="Password">
+											name="password" placeholder="Password">
 									</div>
 									<div class="col-md-8">
 										<div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
@@ -64,14 +76,28 @@
 								</div>
 							</div>
 						</form>
+
+
 					</div>
 
 
 					<div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+
+
 						<form action="/do_register" method="post">
 							<div class="login-form">
 								<h4 class="login-title">Register</h4>
 								<div class="row">
+
+									<c:if test="${sessionScope.message != null}">
+										<div class="col-md-12 alert ${sessionScope.message.type}"
+											role="alert">
+											${sessionScope.message.content}
+											<%
+											session.removeAttribute("message");
+											%>
+										</div>
+									</c:if>
 
 									<div class="col-md-6 col-12 mb-20">
 										<label>Full Name</label> <input class="mb-0" type="text"
@@ -104,6 +130,8 @@
 								</div>
 							</div>
 						</form>
+
+
 					</div>
 				</div>
 			</div>
@@ -117,5 +145,14 @@
 	</div>
 	<!-- Body Wrapper End Here -->
 	<%@include file="js-link.html"%>
+</body>
+</html>
+<!-- Begin Footer Area -->
+<%@include file="footer.html"%>
+<!-- Footer Area End Here -->
+
+</div>
+<!-- Body Wrapper End Here -->
+<%@include file="js-link.html"%>
 </body>
 </html>

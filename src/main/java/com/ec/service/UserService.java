@@ -30,4 +30,8 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User findUserByEmailAndPassword(String email, String password) {
+        return userRepository.getUserByEmailAndPassword(email, password);
+    }
+
 }

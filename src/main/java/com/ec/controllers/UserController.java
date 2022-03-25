@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/user")
 public class UserController {
 
-    // @Autowired
-    // private UserService userService;
+	// @Autowired
+	// private UserService userService;
 
-    @RequestMapping("/index")
-    public String showPage(Model model) {
-        // model.addAttribute("user", new User());
-        return "index";
-    }
+	@RequestMapping("/index")
+	public String showPage(Model model) {
+		// model.addAttribute("user", new User());
+		return "index";
+	}
 
-    @RequestMapping("/chk")
-    @ResponseBody
-    public String showtemp() {
-        return "This is temp";
-    }
+	@RequestMapping("/chk")
+	@ResponseBody
+	public String showtemp() {
+		return "This is temp";
+	}
 
 }

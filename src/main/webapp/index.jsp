@@ -3079,9 +3079,7 @@
 												alt="product image thumb">
 										</div>
 										<div class="sm-image">
-											<img
-												src="/images/product/small-size/6.jpg"
-												alt="product image thumb">
+											<img src="/images/product/small-size/6.jpg" alt="product image thumb">
 										</div>
 									</div>
 								</div>

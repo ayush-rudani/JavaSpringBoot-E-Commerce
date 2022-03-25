@@ -11,7 +11,6 @@ public class HomeController {
 	public String tmp(Model model) {
 		System.out.println("Inside Con.");
 		model.addAttribute("name", "Ayush");
-
 		return "temp";
 	}
 

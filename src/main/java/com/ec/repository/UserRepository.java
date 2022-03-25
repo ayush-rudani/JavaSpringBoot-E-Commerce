@@ -7,11 +7,12 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
+
 public interface UserRepository extends JpaRepository<User, Integer> {
     @Query("SELECT u FROM User u WHERE u.email = :email ")
     public User getUserByUserName(@Param("email") String email);
 
+    @Query("SELECT u FROM User u WHERE u.email = :email AND u.password = :password")
+    public User getUserByEmailAndPassword(@Param("email") String email, @Param("password") String password);
 
-
-    
 }

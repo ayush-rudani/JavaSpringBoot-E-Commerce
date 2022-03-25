@@ -1,5 +1,6 @@
 package com.ec.controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.ec.def.Message;
@@ -27,6 +28,29 @@ public class MainController {
 		return "index";
 	}
 
+	@PostMapping("/do_login")
+	public String validateLogin(@ModelAttribute User user, Model model, HttpServletRequest request,
+			HttpSession session) {
+		User foundUser = userService.findUserByEmailAndPassword(user.getEmail(), user.getPassword());
+		if (foundUser == null) {
+			session.setAttribute("message", new Message(
+					"The email and password you entered did not match our records. Please double-check and try again",
+					"alert-danger"));
+			return "redirect:/signup";
+		}
+		System.out.println("foudnUser : " + foundUser);
+
+		request.getSession().setMaxInactiveInterval(60 * 60);
+		request.getSession().setAttribute("user", foundUser);
+
+		if (foundUser.getUser_type().equals("ADMIN")) {
+			return "redirect:/admin";
+		} else if (foundUser.getUser_type().equals("USER")) {
+			return "redirect:/user";
+		}
+		return "redirect:/signup";
+	}
+
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public String showLogin(@ModelAttribute("user") User user, Model model) {
 		model.addAttribute("user", new User());
@@ -49,6 +73,7 @@ public class MainController {
 		user.setUser_type("USER");
 		// user.setPassword();
 
+		// session.setAttribute("temp1", "hello user");
 		userService.saveUser(user);
 
 		model.addAttribute("user", new User());
