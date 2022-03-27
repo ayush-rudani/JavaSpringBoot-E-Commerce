@@ -7,30 +7,30 @@ public class Product {
 	@Id
 	private int id;
 	private String name;
-	private String description;
-	private String photo;
 	private int price;
+	private String description;
 	private int quantity;
+	private String image;
 	@ManyToOne
 	private Category category;
 
 	public Product() {
 	}
 
-	public Product(int id, String name, String description, String photo, int price, int quantity, Category category) {
+	public Product(int id, String name, String description, String image, int price, int quantity, Category category) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.photo = photo;
+		this.image = image;
 		this.price = price;
 		this.quantity = quantity;
 		this.category = category;
 	}
 
-	public Product(String name, String description, String photo, int price, int quantity, Category category) {
+	public Product(String name, String description, String image, int price, int quantity, Category category) {
 		this.name = name;
 		this.description = description;
-		this.photo = photo;
+		this.image = image;
 		this.price = price;
 		this.quantity = quantity;
 		this.category = category;
@@ -60,12 +60,12 @@ public class Product {
 		this.description = description;
 	}
 
-	public String getPhoto() {
-		return photo;
+	public String getImage() {
+		return image;
 	}
 
-	public void setPhoto(String photo) {
-		this.photo = photo;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public int getPrice() {
