@@ -18,6 +18,10 @@ public class ProductService {
         return (List<Product>) productRepository.findAll();
     }
 
+    public Product getProductById(int id) {
+        return productRepository.getProductById(id);
+    }
+
     public Product updateProduct(Product product, int id) {
         Product product1 = productRepository.findById(id).get();
         product1.setName(product.getName());

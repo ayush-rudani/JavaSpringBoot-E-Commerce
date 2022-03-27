@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 // @RequestMapping("/admin")
@@ -32,6 +33,13 @@ public class ProductController {
         productService.saveProduct(product);
         session.setAttribute("message", new Message("Product added successfully", "alert-success"));
         return "redirect:/add-product";
+    }
+
+    @GetMapping("/product")
+    public String productDetails(@RequestParam("pid") int pid, Model model) {
+        Product product = productService.getProductById(pid);
+        model.addAttribute("product", product);
+        return "product-details";
     }
 
 }

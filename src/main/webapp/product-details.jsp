@@ -1,0 +1,179 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>$PRODUCT$</title>
+<%@include file="css-link.html"%>
+</head>
+<body>
+
+	<!-- Begin Body Wrapper -->
+	<div class="body-wrapper">
+
+		<!-- Begin Header Area -->
+		<%@include file="header.html"%>
+		<!-- Header Area End Here -->
+
+		<!-- Begin Li's Breadcrumb Area -->
+		<div class="breadcrumb-area">
+			<div class="container">
+				<div class="breadcrumb-content">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li class="active">$PRODUCT$</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Li's Breadcrumb Area End Here -->
+
+
+		<!-- content-wraper start -->
+		<div class="content-wraper">
+			<div class="container">
+				<div class="row single-product-area">
+					<div class="col-lg-5 col-md-6">
+						<!-- Product Details Left -->
+						<div class="product-details-left">
+							<div class="product-details-images slider-navigation-1">
+								<div class="lg-image">
+									<a class="popup-img venobox vbox-item"
+										href="images/product/large-size/1.jpg" data-gall="myGallery">
+										<img src="images/product/large-size/1.jpg" alt="product image">
+										<%-- <img src="${product.image}" alt="product image"> --%>
+									</a>
+								</div>
+							</div>
+
+							<c:if test="${fuser.user_type == 'ADMIN'}">
+								<input type="file" name="photo" id="photo"
+									class="btn btn-outline-warning bg-white border-0" role="button">
+							</c:if>
+
+						</div>
+						<!--// Product Details Left -->
+					</div>
+
+					<div class="col-lg-7 col-md-6">
+						<div class="product-details-view-content pt-60">
+							<div class="product-info">
+
+								<c:if test="${fuser.user_type == 'USER'}">
+									<h2>${product.name}</h2>
+								</c:if>
+								<c:if test="${fuser.user_type == 'ADMIN'}">
+									<input class="mb-0" type="text" value="${product.name}"
+										name="name">
+								</c:if>
+
+
+								<c:if test="${fuser.user_type == 'USER'}">
+									<span class="product-details-ref">${product.category}</span>
+								</c:if>
+								<c:if test="${fuser.user_type == 'ADMIN'}">
+									<input class="mb-0" type="text" value="${product.category}"
+										name="category">
+								</c:if>
+
+
+								<div class="price-box pt-20">
+									<c:if test="${fuser.user_type == 'USER'}">
+										<span class="new-price new-price-2">${product.price}</span>
+									</c:if>
+									<c:if test="${fuser.user_type == 'ADMIN'}">
+										<input type="text" value="${product.price}" name="price">
+									</c:if>
+								</div>
+
+								<div class="product-desc">
+									<p>
+										<c:if test="${fuser.user_type == 'USER'}">
+											<span>${product.description}</span>
+										</c:if>
+										<c:if test="${fuser.user_type == 'ADMIN'}">
+											<textarea name="description" cols="30" rows="10">${product.description}</textarea>
+										</c:if>
+									</p>
+								</div>
+
+								<div class="single-add-to-cart">
+									<form action="#" class="cart-quantity">
+										<div class="quantity">
+											<label>Quantity</label>
+											<div class="cart-plus-minus">
+												<input class="cart-plus-minus-box" value="1" type="text">
+												<div class="dec qtybutton">
+													<i class="fa fa-angle-down"></i>
+												</div>
+												<div class="inc qtybutton">
+													<i class="fa fa-angle-up"></i>
+												</div>
+											</div>
+										</div>
+
+										<c:if test="${fuser.user_type == 'USER'}">
+											<button class="add-to-cart" type="submit">Add to
+												cart</button>
+										</c:if>
+
+										<c:if test="${fuser.user_type == 'ADMIN'}">
+											<button class="add-to-cart" type="submit">Update
+												Product</button>
+										</c:if>
+
+										<!-- <a href="remove-product"><button class="add-to-cart bg-danger text-white">Remove Product</button></a> -->
+
+									</form>
+								</div>
+
+								<div class="block-reassurance">
+									<ul>
+										<li>
+											<div class="reassurance-item">
+												<div class="reassurance-icon">
+													<i class="fa fa-check-square-o"></i>
+												</div>
+												<p>Security policy (edit with Customer reassurance
+													module)</p>
+											</div>
+										</li>
+										<li>
+											<div class="reassurance-item">
+												<div class="reassurance-icon">
+													<i class="fa fa-truck"></i>
+												</div>
+												<p>Delivery policy (edit with Customer reassurance
+													module)</p>
+											</div>
+										</li>
+										<li>
+											<div class="reassurance-item">
+												<div class="reassurance-icon">
+													<i class="fa fa-exchange"></i>
+												</div>
+												<p>Return policy (edit with Customer reassurance module)</p>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- content-wraper end -->
+
+
+		<!-- Begin Footer Area -->
+		<%@include file="footer.html"%>
+		<!-- Footer Area End Here -->
+
+	</div>
+	<!-- Body Wrapper End Here -->
+	<%@include file="js-link.html"%>
+</body>
+</html>
