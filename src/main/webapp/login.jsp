@@ -147,12 +147,3 @@
 	<%@include file="js-link.html"%>
 </body>
 </html>
-<!-- Begin Footer Area -->
-<%@include file="footer.html"%>
-<!-- Footer Area End Here -->
-
-</div>
-<!-- Body Wrapper End Here -->
-<%@include file="js-link.html"%>
-</body>
-</html>

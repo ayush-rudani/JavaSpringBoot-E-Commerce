@@ -9,6 +9,7 @@
 <body>
 	<h1>This is Index page</h1>
 	<h1>Name is: ${name}</h1>
+	<h1>Founded User : ${fuser}</h1>
 </body>
 
 </html>

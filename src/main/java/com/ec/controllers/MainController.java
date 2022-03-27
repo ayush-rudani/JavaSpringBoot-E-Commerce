@@ -42,7 +42,7 @@ public class MainController {
 		System.out.println("foudnUser : " + foundUser);
 
 		request.getSession().setMaxInactiveInterval(60 * 60);
-		request.getSession().setAttribute("user", foundUser);
+		request.getSession().setAttribute("fuser", foundUser);
 
 		if (foundUser.getUser_type().equals("ADMIN")) {
 			return "redirect:/admin";
