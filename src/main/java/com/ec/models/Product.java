@@ -1,16 +1,20 @@
 package com.ec.models;
 
+import java.util.UUID;
+
 import javax.persistence.*;
 
 @Entity
 public class Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
+	@Column(nullable = false)
 	private String name;
+	@Column(nullable = false)
 	private int price;
+	@Column(nullable = false)
 	private String description;
-	private int quantity;
 	private String image;
 	@ManyToOne
 	private Category category;
@@ -18,22 +22,20 @@ public class Product {
 	public Product() {
 	}
 
-	public Product(int id, String name, String description, String image, int price, int quantity, Category category) {
+	public Product(int id, String name, String description, String image, int price, Category category) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.image = image;
 		this.price = price;
-		this.quantity = quantity;
 		this.category = category;
 	}
 
-	public Product(String name, String description, String image, int price, int quantity, Category category) {
+	public Product(String name, String description, String image, int price, Category category) {
 		this.name = name;
 		this.description = description;
 		this.image = image;
 		this.price = price;
-		this.quantity = quantity;
 		this.category = category;
 	}
 
@@ -76,15 +78,6 @@ public class Product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-
 	public Category getCategory() {
 		return category;
 	}

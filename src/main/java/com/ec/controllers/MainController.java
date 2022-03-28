@@ -1,5 +1,7 @@
 package com.ec.controllers;
 
+import java.sql.SQLIntegrityConstraintViolationException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -36,7 +38,7 @@ public class MainController {
 		if (foundUser == null) {
 			session.setAttribute("message", new Message(
 					"The email and password you entered did not match our records. Please double-check and try again",
-					"alert-danger"));
+					"alert-danger", "login"));
 			return "redirect:/signup";
 		}
 		System.out.println("foudnUser : " + foundUser);
@@ -47,7 +49,8 @@ public class MainController {
 		if (foundUser.getUser_type().equals("ADMIN")) {
 			return "redirect:/admin";
 		} else if (foundUser.getUser_type().equals("USER")) {
-			return "redirect:/user";
+//			return "redirect:/user";
+			return "redirect:/account-details";
 		}
 		return "redirect:/signup";
 	}
@@ -74,9 +77,16 @@ public class MainController {
 		user.setUser_type("USER");
 		// user.setPassword();
 		// session.setAttribute("temp1", "hello user");
-		userService.saveUser(user);
+		
+		try
+		{	
+			userService.saveUser(user);
+		}catch(Exception e) {
+			session.setAttribute("message", new Message("Something went wrong!!", "alert-danger", "registration"));
+			return "redirect:/signup";
+		}
 		model.addAttribute("user", new User());
-		session.setAttribute("message", new Message("Successfully Registered!!", "alert-success"));
+		session.setAttribute("message", new Message("Successfully Registered!!", "alert-success", "registration"));
 		// User user1 = userService.saveUser(user);
 		return "redirect:/signup";
 	}

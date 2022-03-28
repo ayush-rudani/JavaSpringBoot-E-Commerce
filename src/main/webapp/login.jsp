@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +44,7 @@
 								<h4 class="login-title">Login</h4>
 								<div class="row">
 
-									<c:if test="${sessionScope.message != null}">
+									<c:if test="${sessionScope.message != null && sessionScope.message.src == 'login' }">
 										<div class="col-md-12 alert ${sessionScope.message.type}"
 											role="alert">
 											${sessionScope.message.content}
@@ -59,7 +60,7 @@
 									</div>
 									<div class="col-12 mb-20">
 										<label>Password</label> <input class="mb-0" type="password"
-											name="password" placeholder="Password">
+											name="password" placeholder="Password" required>
 									</div>
 									<div class="col-md-8">
 										<div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
@@ -89,7 +90,7 @@
 								<h4 class="login-title">Register</h4>
 								<div class="row">
 
-									<c:if test="${sessionScope.message != null}">
+									<c:if test="${sessionScope.message != null && sessionScope.message.src == 'registration' }">
 										<div class="col-md-12 alert ${sessionScope.message.type}"
 											role="alert">
 											${sessionScope.message.content}
@@ -105,8 +106,8 @@
 									</div>
 
 									<div class="col-md-6 col-12 mb-20">
-										<label>Full Name</label> <input class="mb-0" type="text"
-											placeholder="Full Name" name="name">
+										<label>Mobile Number</label> <input class="mb-0" type="tel"
+											placeholder="999 999 9999" pattern="[0-9]{5} [0-9]{5}" name="phone_no">
 									</div>
 
 									<div class="col-md-12 mb-20">
@@ -123,7 +124,11 @@
 										<label>Confirm Password</label> <input class="mb-0"
 											type="password" placeholder="Confirm Password">
 									</div>
-
+									
+									<div class="col-md-12 mb-20">
+										<label>Address</label> <textarea class="form-control" rows="5" cols="100" placeholder="Address goes here..." name="address"></textarea>
+									</div>
+										
 									<div class="col-12">
 										<button class="register-button mt-0">Register</button>
 									</div>

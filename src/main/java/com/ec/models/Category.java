@@ -2,15 +2,20 @@ package com.ec.models;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
+
 import javax.persistence.*;
 
 @Entity
 public class Category {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
+	@Column(unique = true)
 	private String category;
+	@Column(nullable = false)
 	private String category_desc;
+	@Column(nullable = false)
 	@OneToMany(mappedBy = "category")
 	private List<Product> products = new ArrayList<>();
 

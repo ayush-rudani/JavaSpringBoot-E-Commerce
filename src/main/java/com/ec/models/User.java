@@ -1,21 +1,29 @@
 package com.ec.models;
 
+import java.util.UUID;
+
 import javax.persistence.*;
 
 @Entity
 public class User {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	int id;
 	// @NotBlank(message = "Please enter your name")
+	@Column(nullable = false)
 	private String name;
 	// @NotBlank(message = "Please enter your phone number")
+	@Column(nullable = false)
 	private String phone_no;
 	// @NotBlank(message = "Please enter your email")
 	// @Email(message = "Please enter a valid email")
+	@Column(unique = true, nullable = false)
 	private String email;
+	@Column(nullable = false)
 	private String password;
+	@Column(nullable = false)
 	private String address;
+	@Column(nullable = false)
 	private String user_type;
 	// private String DOB;
 	// private Address address;

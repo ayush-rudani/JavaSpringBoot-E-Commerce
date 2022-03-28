@@ -1,9 +1,12 @@
 package com.ec.controllers;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import com.ec.def.Message;
 import com.ec.models.Product;
+import com.ec.service.CategoryService;
 import com.ec.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +23,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ProductController {
     @Autowired
     private ProductService productService;
+    @Autowired
+    private CategoryService categoryService;
 
     @GetMapping("/add-product")
     public String showAddProduct(@ModelAttribute("product") Product product, Model model) {
         model.addAttribute("product", new Product());
+        model.addAttribute("categories", categoryService.fetchCategoryList());
         System.out.println("Rediecting to Product Form");
         return "add-product";
     }
@@ -31,7 +37,7 @@ public class ProductController {
     @PostMapping("/saveProduct")
     public String addProduct(@ModelAttribute Product product, Model model, HttpSession session) {
         productService.saveProduct(product);
-        session.setAttribute("message", new Message("Product added successfully", "alert-success"));
+        session.setAttribute("message", new Message("Product added successfully", "alert-success", "add-product"));
         return "redirect:/add-product";
     }
 

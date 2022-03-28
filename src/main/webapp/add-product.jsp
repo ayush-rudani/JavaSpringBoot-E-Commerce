@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import = "com.ec.models.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,9 +64,11 @@
 									</div>
 									<div class="col-12 mb-20">
 										<label>Category</label> <select name="category" id="category"
-											class="form-control-select bg-transparent" name="categor">
+											class="form-control-select bg-transparent" name="category">
 											<option value="-1" selected disabled>Select Category</option>
-											<option value="temp">category1</option>
+											<c:forEach var="i" items="${categories}">
+											<option value="${i.id}">${i.category}</option>
+											</c:forEach>
 										</select>
 									</div>
 									<div class="col-md-12 mb-20">
@@ -78,10 +81,7 @@
 										<label>Price</label> <input class="mb-0" type="text"
 											placeholder="Price in INR" name="price">
 									</div>
-									<div class="col-md-6 mb-20">
-										<label>Quantity</label> <input class="mb-0" type="number"
-											placeholder="1" name="quantity">
-									</div>
+									
 									<div class="col-12">
 										<button class="register-button mt-0">Add to Inventory</button>
 									</div>
