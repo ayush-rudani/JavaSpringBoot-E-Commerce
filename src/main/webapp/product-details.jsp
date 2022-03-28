@@ -61,7 +61,8 @@
 						<div class="product-details-view-content pt-60">
 							<div class="product-info">
 
-								<c:if test="${fuser.user_type == 'USER'}">
+								<c:if
+									test="${fuser.user_type == 'USER' || sessionScope.fuser == null}">
 									<h2>${product.name}</h2>
 								</c:if>
 								<c:if test="${fuser.user_type == 'ADMIN'}">
@@ -70,7 +71,8 @@
 								</c:if>
 
 
-								<c:if test="${fuser.user_type == 'USER'}">
+								<c:if
+									test="${fuser.user_type == 'USER' || sessionScope.fuser == null}">
 									<span class="product-details-ref">${category.category_name}</span>
 								</c:if>
 								<c:if test="${fuser.user_type == 'ADMIN'}">
@@ -80,7 +82,8 @@
 
 
 								<div class="price-box pt-20">
-									<c:if test="${fuser.user_type == 'USER'}">
+									<c:if
+										test="${fuser.user_type == 'USER' || sessionScope.fuser == null}">
 										<span class="new-price new-price-2">&#x20b9;${product.price}</span>
 									</c:if>
 									<c:if test="${fuser.user_type == 'ADMIN'}">
@@ -90,7 +93,8 @@
 
 								<div class="product-desc">
 									<p>
-										<c:if test="${fuser.user_type == 'USER'}">
+										<c:if
+											test="${fuser.user_type == 'USER' || sessionScope.fuser == null}">
 											<span>${product.description}</span>
 										</c:if>
 										<c:if test="${fuser.user_type == 'ADMIN'}">
@@ -114,7 +118,8 @@
 											</div>
 										</div>
 
-										<c:if test="${fuser.user_type == 'USER'}">
+										<c:if
+											test="${fuser.user_type == 'USER' || sessionScope.fuser == null}">
 											<button class="add-to-cart" type="submit">Add to
 												cart</button>
 										</c:if>
