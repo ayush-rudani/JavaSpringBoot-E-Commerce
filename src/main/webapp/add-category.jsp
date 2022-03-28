@@ -9,9 +9,6 @@
 
 </head>
 <body>
-	<!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
 	<!-- Begin Body Wrapper -->
 	<div class="body-wrapper">
 
@@ -51,7 +48,6 @@
 
 
 					<div class="col-12">
-
 						<form action="saveCateory" method="POST">
 							<div class="login-form">
 								<h4 class="login-title">Add a Category</h4>
@@ -63,7 +59,7 @@
 									</div>
 									<div class="col-md-12 mb-20">
 										<label>Category Description</label>
-										<textarea name="category_desc" id="desc" cols="30" rows="10"
+										<textarea name="category_desc" cols="30" rows="10"
 											placeholder="Give Product Description here..."
 											class="form-control-select bg-transparent"></textarea>
 									</div>

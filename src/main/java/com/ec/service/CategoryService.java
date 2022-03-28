@@ -13,8 +13,13 @@ import com.ec.repository.CategoryRepository;
 public class CategoryService {
 	@Autowired
 	CategoryRepository categoryRepository;
-	
+
+	public Category saveCategory(Category category) {
+		return categoryRepository.save(category);
+	}
+
 	public List<Category> fetchCategoryList() {
-        return (List<Category>) categoryRepository.findAll();
-    }
+		return (List<Category>) categoryRepository.findAll();
+	}
+
 }

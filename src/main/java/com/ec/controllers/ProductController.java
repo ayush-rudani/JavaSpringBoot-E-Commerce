@@ -5,6 +5,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpSession;
 
 import com.ec.def.Message;
+import com.ec.models.Category;
 import com.ec.models.Product;
 import com.ec.service.CategoryService;
 import com.ec.service.ProductService;
@@ -46,6 +47,20 @@ public class ProductController {
         Product product = productService.getProductById(pid);
         model.addAttribute("product", product);
         return "product-details";
+    }
+
+    @GetMapping("/add-category")
+    public String showAddCategory(@ModelAttribute Category category, Model model) {
+        model.addAttribute("category", new Category());
+        return "add-category";
+    }
+
+    @PostMapping("/saveCateory")
+    public String saveCateory(@ModelAttribute("category") Category category, Model model, HttpSession session) {
+        category.setProducts(null);
+        categoryService.saveCategory(category);
+        session.setAttribute("message", new Message("Category added successfully", "alert-success", "add-category"));
+        return "redirect:/add-category";
     }
 
 }
