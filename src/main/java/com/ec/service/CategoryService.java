@@ -18,6 +18,10 @@ public class CategoryService {
 		return categoryRepository.save(category);
 	}
 
+	public Category getCategoryById(int id) {
+		return categoryRepository.getCategoryById(id);
+	}
+
 	public List<Category> fetchCategoryList() {
 		return (List<Category>) categoryRepository.findAll();
 	}

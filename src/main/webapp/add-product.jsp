@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import = "com.ec.models.*" %>
+<%@ page import="com.ec.models.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +10,6 @@
 <%@include file="css-link.html"%>
 </head>
 <body>
-	<!--[if lt IE 8]>
-		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-	<![endif]-->
 	<!-- Begin Body Wrapper -->
 	<div class="body-wrapper">
 
@@ -67,7 +64,7 @@
 											class="form-control-select bg-transparent" name="category">
 											<option value="-1" selected disabled>Select Category</option>
 											<c:forEach var="i" items="${categories}">
-											<option value="${i.id}">${i.category_name}</option>
+												<option value="${i.id}">${i.category_name}</option>
 											</c:forEach>
 										</select>
 									</div>
@@ -81,7 +78,7 @@
 										<label>Price</label> <input class="mb-0" type="text"
 											placeholder="Price in INR" name="price">
 									</div>
-									
+
 									<div class="col-12">
 										<button class="register-button mt-0">Add to Inventory</button>
 									</div>

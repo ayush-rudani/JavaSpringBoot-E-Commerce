@@ -71,17 +71,17 @@
 
 
 								<c:if test="${fuser.user_type == 'USER'}">
-									<span class="product-details-ref">${product.category}</span>
+									<span class="product-details-ref">${category.category_name}</span>
 								</c:if>
 								<c:if test="${fuser.user_type == 'ADMIN'}">
-									<input class="mb-0" type="text" value="${product.category}"
-										name="category">
+									<input class="mb-0" type="text"
+										value="${category.category_name}" name="category">
 								</c:if>
 
 
 								<div class="price-box pt-20">
 									<c:if test="${fuser.user_type == 'USER'}">
-										<span class="new-price new-price-2">${product.price}</span>
+										<span class="new-price new-price-2">&#x20b9;${product.price}</span>
 									</c:if>
 									<c:if test="${fuser.user_type == 'ADMIN'}">
 										<input type="text" value="${product.price}" name="price">

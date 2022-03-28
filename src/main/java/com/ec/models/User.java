@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 public class User {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	// @NotBlank(message = "Please enter your name")
 	@Column(nullable = false)

@@ -44,7 +44,11 @@ public class ProductController {
 
     @GetMapping("/product")
     public String productDetails(@RequestParam("pid") int pid, Model model) {
-        Product product = productService.getProductById(pid);
+        Product product = (Product) productService.getProductById(pid);
+        Category category = (Category) categoryService.getCategoryById(product.getCategory().getId());
+        System.out.println(product.toString());
+        System.out.println(category);
+        model.addAttribute("category", category);
         model.addAttribute("product", product);
         return "product-details";
     }

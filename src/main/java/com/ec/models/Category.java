@@ -9,15 +9,15 @@ import javax.persistence.*;
 @Entity
 public class Category {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@Column(unique = true)
 	private String category_name;
-	
+
 	@Column(nullable = false)
 	private String category_desc;
-	
+
 	@Column(nullable = false)
 	@OneToMany(mappedBy = "category")
 	private List<Product> products = new ArrayList<>();
@@ -36,7 +36,7 @@ public class Category {
 		this.category_desc = category_desc;
 		this.products = products;
 	}
-	
+
 	public Category(String category, String category_desc) {
 		this.category_name = category;
 		this.category_desc = category_desc;

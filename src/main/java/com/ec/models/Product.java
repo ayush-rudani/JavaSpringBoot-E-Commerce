@@ -13,7 +13,7 @@ public class Product {
 	}
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(nullable = false)
 	private String name;
@@ -84,6 +84,7 @@ public class Product {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+
 	public Category getCategory() {
 		return category;
 	}
@@ -91,4 +92,11 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [category=" + category + ", description=" + description + ", id=" + id + ", image=" + image
+				+ ", name=" + name + ", price=" + price + "]";
+	}
+
 }
