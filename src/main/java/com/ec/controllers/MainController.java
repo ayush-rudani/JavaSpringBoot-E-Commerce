@@ -32,7 +32,7 @@ public class MainController {
 	}
 
 	@PostMapping("/do_login")
-	public String validateLogin(@ModelAttribute User user, Model model, HttpServletRequest request,
+	public String validateLogin(@ModelAttribute("user") User user, Model model, HttpServletRequest request,
 			HttpSession session) {
 		User foundUser = userService.findUserByEmailAndPassword(user.getEmail(), user.getPassword());
 		if (foundUser == null) {
@@ -45,6 +45,7 @@ public class MainController {
 
 		request.getSession().setMaxInactiveInterval(60 * 60);
 		request.getSession().setAttribute("fuser", foundUser);
+		model.addAttribute("user", foundUser);
 
 		if (foundUser.getUser_type().equals("ADMIN")) {
 			return "redirect:/admin";
