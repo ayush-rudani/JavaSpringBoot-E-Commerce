@@ -67,7 +67,7 @@
 											class="form-control-select bg-transparent" name="category">
 											<option value="-1" selected disabled>Select Category</option>
 											<c:forEach var="i" items="${categories}">
-											<option value="${i.id}">${i.category}</option>
+											<option value="${i.id}">${i.category_name}</option>
 											</c:forEach>
 										</select>
 									</div>

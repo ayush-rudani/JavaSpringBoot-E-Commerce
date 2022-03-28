@@ -11,10 +11,13 @@ public class Category {
 	@Id
 	@GeneratedValue
 	private int id;
+	
 	@Column(unique = true)
-	private String category;
+	private String category_name;
+	
 	@Column(nullable = false)
 	private String category_desc;
+	
 	@Column(nullable = false)
 	@OneToMany(mappedBy = "category")
 	private List<Product> products = new ArrayList<>();
@@ -24,14 +27,19 @@ public class Category {
 
 	public Category(int id, String category, String category_desc) {
 		this.id = id;
-		this.category = category;
+		this.category_name = category;
 		this.category_desc = category_desc;
 	}
 
 	public Category(String category, String category_desc, List<Product> products) {
-		this.category = category;
+		this.category_name = category;
 		this.category_desc = category_desc;
 		this.products = products;
+	}
+	
+	public Category(String category, String category_desc) {
+		this.category_name = category;
+		this.category_desc = category_desc;
 	}
 
 	public int getId() {
@@ -42,12 +50,12 @@ public class Category {
 		this.id = id;
 	}
 
-	public String getCategory() {
-		return category;
+	public String getCategory_name() {
+		return category_name;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setCategory_name(String category) {
+		this.category_name = category;
 	}
 
 	public String getCategory_desc() {

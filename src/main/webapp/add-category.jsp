@@ -55,7 +55,7 @@
 									<div class="col-12 mb-20">
 										<label>Category Name</label> <input
 											class="form-control-plaintext bg-transparent" type="text"
-											placeholder="CategoryName" name="category">
+											placeholder="CategoryName" name="category_name">
 									</div>
 									<div class="col-md-12 mb-20">
 										<label>Category Description</label>
