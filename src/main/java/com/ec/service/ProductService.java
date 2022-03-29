@@ -39,10 +39,6 @@ public class ProductService {
     public void deleteProduct(int id) {
         productRepository.deleteById(id);
     }
-    
-    public List<Product> fetchAllProduct(){
-    	return productRepository.findAllByOrderByNameAsc();
-    }
 
     public List<Product> fetchProductListByCategory(Category category) {
         return productRepository.findTop5ProductByCategory(category);
