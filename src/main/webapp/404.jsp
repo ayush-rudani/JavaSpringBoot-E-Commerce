@@ -84,7 +84,7 @@
 			<div class="breadcrumb-content">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li class="active">${errorCode}Error</li>
+					<li class="active">${errorCode} Error</li>
 				</ul>
 			</div>
 		</div>

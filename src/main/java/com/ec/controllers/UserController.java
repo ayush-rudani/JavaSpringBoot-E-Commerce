@@ -44,8 +44,12 @@ public class UserController {
 
 	@GetMapping("/account-details")
 	public String accountDetails(Model model, HttpSession session) {
-		model.addAttribute("user", session.getAttribute("fuser"));
-		return "account-details";
+		User user = (User) session.getAttribute("fuser");
+		if (user != null) {
+			model.addAttribute("user", session.getAttribute("fuser"));
+			return "account-details";
+		}
+		return "redirect:/signup";
 	}
 
 	@GetMapping("/cart")

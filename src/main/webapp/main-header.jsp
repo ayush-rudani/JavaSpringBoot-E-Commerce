@@ -7,8 +7,7 @@
 				<div class="col-lg-3 col-md-4">
 					<div class="header-top-left">
 						<ul class="phone-wrap">
-							<li><span>Telephone Enquiry:</span><a href="#">(+91) 999
-									999 9999</a></li>
+							<li><span>Telephone Enquiry:</span><a href="#">(+91) 98982 59898</a></li>
 						</ul>
 					</div>
 				</div>
