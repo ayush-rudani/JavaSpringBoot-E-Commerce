@@ -15,8 +15,6 @@ public class User {
 	// @NotBlank(message = "Please enter your phone number")
 	@Column(nullable = false)
 	private String phone_no;
-	// @NotBlank(message = "Please enter your email")
-	// @Email(message = "Please enter a valid email")
 	@Column(unique = true, nullable = false)
 	private String email;
 	@Column(nullable = false)
@@ -25,6 +23,7 @@ public class User {
 	private String address;
 	@Column(nullable = false)
 	private String user_type;
+	private String image;
 	// private String DOB;
 	// private Address address;
 
@@ -32,7 +31,7 @@ public class User {
 
 	}
 
-	public User(int id, String name, String phone_no, String email, String password, String address, String user_type) {
+	public User(int id, String name, String phone_no, String email, String password, String address, String user_type, String image) {
 		this.id = id;
 		this.name = name;
 		this.phone_no = phone_no;
@@ -40,15 +39,25 @@ public class User {
 		this.password = password;
 		this.address = address;
 		this.user_type = user_type;
+		this.image = image;
 	}
 
-	public User(String name, String phone_no, String email, String password, String address, String user_type) {
+	public User(String name, String phone_no, String email, String password, String address, String user_type, String image) {
 		this.name = name;
 		this.phone_no = phone_no;
 		this.email = email;
 		this.password = password;
 		this.address = address;
 		this.user_type = user_type;
+		this.image = image;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public int getId() {
@@ -110,6 +119,8 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", phone_no=" + phone_no + ", email=" + email + ", password="
-				+ password + ", address=" + address + ", user_type=" + user_type + "]";
+				+ password + ", address=" + address + ", user_type=" + user_type + ", image=" + image + "]";
 	}
+
+	
 }

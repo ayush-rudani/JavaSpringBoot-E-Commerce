@@ -21,6 +21,8 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     public Product getProductById(@Param("id") int id);
 
     public List<Product> findTop5ProductByCategory(Category category);
+    
+    public List<Product> findAllProductByCategory(Category category);
 
     // public List<Product>
 

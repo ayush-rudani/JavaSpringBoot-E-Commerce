@@ -85,7 +85,7 @@
 					<div class="col-sm-12 col-md-12 col-lg-6 col-xs-12">
 
 
-						<form action="/do_register" method="post">
+						<form action="/do_register" method="post" enctype='multipart/form-data'>
 							<div class="login-form">
 								<h4 class="login-title">Register</h4>
 								<div class="row">
@@ -127,6 +127,11 @@
 									
 									<div class="col-md-12 mb-20">
 										<label>Address</label> <textarea class="form-control" rows="5" cols="100" placeholder="Address goes here..." name="address"></textarea>
+									</div>
+									
+									<div class="col-md-6 mb-20 file-control file-control-file">
+										<label>Profile Picture</label> <input class="mb-0"
+											type="file" name="file" id="file">
 									</div>
 									
 									<!-- <div class="col-md-6 mb-20">

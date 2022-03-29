@@ -43,6 +43,10 @@ public class ProductService {
     public List<Product> fetchProductListByCategory(Category category) {
         return productRepository.findTop5ProductByCategory(category);
     }
+    
+    public List<Product> fetchAllProductsByCategory(Category category) {
+        return productRepository.findAllProductByCategory(category);
+    }
 
     public List<Product> fetchAllProduct() {
         return productRepository.findAllByOrderByNameAsc();

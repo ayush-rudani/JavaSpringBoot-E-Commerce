@@ -56,7 +56,6 @@
 								<table class="table">
 									<thead>
 										<tr>
-											<th class="li-product-remove">remove</th>
 											<th class="li-product-thumbnail">Product</th>
 											<th class="cart-product-name">Category
 												<button class="border-0 bg-transparent">
@@ -83,8 +82,6 @@
 									<tbody>
 										<c:forEach var="i" items="${purchases}">
 											<tr>
-												<td class="li-product-remove"><a
-													href="remove-purchase/${i.id}"><i class="fa fa-times"></i></a></td>
 												<td class="li-product-thumbnail"><a href="#"><img
 														src="<%= request.getContextPath() %>/uploads/products/${i.product.image}"
 														alt="Li's Product Image"></a></td>

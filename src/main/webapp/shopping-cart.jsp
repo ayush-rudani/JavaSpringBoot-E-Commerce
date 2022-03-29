@@ -54,7 +54,7 @@
 												<td class="li-product-remove"><a
 													href="/cart/remove/${i.id}"><i class="fa fa-times"></i></a></td>
 												<td class="li-product-thumbnail"><a href="#"><img
-														src="images/product/small-size/5.jpg"
+														src="<%= request.getContextPath() %>/uploads/products/${i.product.image}"
 														alt="Li's Product Image"></a></td>
 												<td class="li-product-subtotal"><a href="#">${i.product.name }</a>
 													<br>
@@ -76,10 +76,6 @@
 												class="button" name="apply_coupon" value="Apply coupon"
 												type="submit">
 										</div>
-										<div class="coupon2">
-											<input class="button" name="update_cart" value="Update cart"
-												type="submit">
-										</div>
 									</div>
 								</div>
 							</div>
@@ -90,7 +86,7 @@
 										<ul>
 											<li>Total <span>$ ${cost}</span></li>
 										</ul>
-										<a href="#">Proceed to checkout</a>
+										<a href="checkout">Proceed to checkout</a>
 									</div>
 								</div>
 							</div>

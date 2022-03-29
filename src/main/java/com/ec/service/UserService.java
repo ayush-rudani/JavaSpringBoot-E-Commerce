@@ -2,6 +2,8 @@ package com.ec.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import com.ec.models.User;
 import com.ec.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +35,9 @@ public class UserService {
     public User findUserByEmailAndPassword(String email, String password) {
         return userRepository.getUserByEmailAndPassword(email, password);
     }
-
+    
+    @Transactional
+    public void updateUser(User user) {
+    	userRepository.setUserInfoById(user.getName(), user.getEmail(), user.getAddress(), user.getPhone_no(), user.getImage(), user.getId());
+    }
 }

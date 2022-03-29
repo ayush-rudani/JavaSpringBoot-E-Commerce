@@ -119,11 +119,11 @@
 						<div class="col-lg-12">
 							<div class="li-section-title">
 								<h2>
-									<span id="gaming">${cat[loop.index].category.category_name}</span>
+									<span id="gaming">${cat.get(0).category.category_name}</span>
 									<%-- <span id="gaming"><%=cat.get(loop.index).getCategory().getCategory_Name()%></span> --%>
 								</h2>
 								<ul class="li-sub-category-list">
-									<li class="active"><a href="shop-left-sidebar.html">View
+									<li class="active"><a href="shop-data/${cat.get(0).category.id}">View
 											All</a></li>
 								</ul>
 							</div>
@@ -137,7 +137,7 @@
 										<div class="col-lg-12">
 											<div class="single-product-wrap">
 												<div class="product-image">
-													<a href="product-details"> <img
+													<a href="product?pid=${pro.id }"> <img
 														src="<%= request.getContextPath() %>/uploads/products/${pro.image}"
 														alt="Product Image"> <%-- </a> <span class="sticker">New</span> --%>
 												</div>
@@ -158,7 +158,7 @@
 															</div>
 														</div> --%>
 														<h4>
-															<a class="product_name" href="product-details">${pro.name}</a>
+															<a class="product_name" href="product?pid=${pro.id }">${pro.name}</a>
 														</h4>
 														<div class="price-box">
 															<span class="new-price">${pro.price}</span>

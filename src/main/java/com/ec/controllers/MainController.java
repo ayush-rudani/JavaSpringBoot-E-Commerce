@@ -1,5 +1,6 @@
 package com.ec.controllers;
 
+import java.io.File;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,8 @@ import com.ec.service.CartService;
 import com.ec.service.CategoryService;
 import com.ec.service.ProductService;
 import com.ec.service.UserService;
+import com.google.common.io.Files;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,6 +25,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class MainController {
@@ -69,11 +74,8 @@ public class MainController {
 		request.getSession().setAttribute("fuser", foundUser);
 		model.addAttribute("user", foundUser);
 
-		if (foundUser.getUser_type().equals("ADMIN")) {
-			return "redirect:/admin";
-		} else if (foundUser.getUser_type().equals("USER")) {
-			// return "redirect:/user";
-			return "redirect:/account-details";
+		if (foundUser.getUser_type().equals("ADMIN") || foundUser.getUser_type().equals("USER")) {
+			return "redirect:/index";
 		}
 		return "redirect:/signup";
 	}
@@ -86,7 +88,7 @@ public class MainController {
 	}
 
 	@PostMapping("/do_register")
-	public String registerUser(@ModelAttribute User user, BindingResult result, Model model, HttpSession session) {
+	public String registerUser(@ModelAttribute User user, BindingResult result, Model model, HttpSession session, @RequestParam("file") MultipartFile file, HttpServletRequest request) {
 
 		if (result.hasErrors()) {
 			model.addAttribute("user", user);
@@ -100,7 +102,28 @@ public class MainController {
 		user.setUser_type("USER");
 		// user.setPassword();
 		// session.setAttribute("temp1", "hello user");
+		if (!file.isEmpty()) {
+            try {
+                String uploadsDir = "/uploads/users/";
+                String realPathtoUploads = request.getServletContext().getRealPath(uploadsDir);
+                if (!new File(realPathtoUploads).exists()) {
+                    new File(realPathtoUploads).mkdir();
+                }
 
+                String orgName = file.getOriginalFilename();
+                String fileName = Files.getNameWithoutExtension(orgName)
+                        + new java.sql.Timestamp(System.currentTimeMillis()).getTime();
+                String extension = Files.getFileExtension(orgName);
+                orgName = fileName + '.' + extension;
+                user.setImage(orgName);
+                String filePath = realPathtoUploads + orgName;
+                File dest = new File(filePath);
+                file.transferTo(dest);
+            } catch (Exception e) {
+                System.out.println("Exception: " + e.getMessage());
+            }
+        }
+		
 		try {
 			userService.saveUser(user);
 		} catch (Exception e) {

@@ -23,7 +23,7 @@
 				<div class="breadcrumb-content">
 					<ul>
 						<li><a href="index">Home</a></li>
-						<li class="active">{product.name}</li>
+						<li class="active">${product.name}</li>
 					</ul>
 				</div>
 			</div>
@@ -41,15 +41,15 @@
 							<div class="product-details-images slider-navigation-1">
 								<div class="lg-image">
 									<a class="popup-img venobox vbox-item"
-										href="images/product/large-size/1.jpg" data-gall="myGallery">
-										<img src="images/product/large-size/1.jpg" alt="product image">
+										href="<%= request.getContextPath() %>/uploads/products/${product.image}" data-gall="myGallery">
+										<img src="<%= request.getContextPath() %>/uploads/products/${product.image}" alt="product image">
 										<%-- <img src="${product.image}" alt="product image"> --%>
 									</a>
 								</div>
 							</div>
 
 							<c:if test="${fuser.user_type == 'ADMIN'}">
-								<input type="file" name="photo" id="photo"
+								<input type="file" name="file" id="file"
 									class="btn btn-outline-warning bg-white border-0" role="button">
 							</c:if>
 
@@ -104,7 +104,12 @@
 								</div>
 
 								<div class="single-add-to-cart">
-									<form action="#" class="cart-quantity">
+									<c:if test="${fuser.user_type == 'ADMIN'}">
+									<form action="/update-product/${product.id }" class="cart-quantity">
+									</c:if>
+									<c:if test="${fuser.user_type != 'ADMIN'}">
+									<form action="/add-to-cart/${product.id }" class="cart-quantity">
+									</c:if>
 										<div class="quantity">
 											<label>Quantity</label>
 											<div class="cart-plus-minus">
