@@ -120,7 +120,7 @@
 
 										<c:if
 											test="${fuser.user_type == 'USER' || sessionScope.fuser == null}">
-											<button class="add-to-cart" type="submit">Add to
+											<button class="add-to-cart" type="submit" style="margin-left: 25px;">Add to
 												cart</button>
 										</c:if>
 
@@ -135,7 +135,7 @@
 								</div>
 
 								<div class="block-reassurance">
-									<ul>
+									<ul style="margin-top: 45px; margin-bottom: 30px">
 										<li>
 											<div class="reassurance-item">
 												<div class="reassurance-icon">
