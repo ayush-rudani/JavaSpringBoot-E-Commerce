@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import com.ec.def.Message;
+import com.ec.models.Cart;
 import com.ec.models.Category;
 import com.ec.models.Product;
 import com.ec.models.User;
@@ -37,6 +38,25 @@ public class MainController {
 	private CategoryService categoryService;
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	private CartService cartService;
+
+	@ModelAttribute
+	public void miniCart(Model model, HttpSession session) {
+		User user = (User) session.getAttribute("fuser");
+		if (user != null && (!model.containsAttribute("cartItem1"))) {
+			List<Cart> cartList = new ArrayList<Cart>();
+			cartList = cartService.fetchCartListByUserId(user.getId());
+			double cartTotal = 0;
+			for (Cart cart : cartList) {
+				cartTotal += cart.getProduct().getPrice();
+			}
+			model.addAttribute("cartItem1", cartList.get(0));
+			model.addAttribute("cartItem2", cartList.get(1));
+			model.addAttribute("cost", cartTotal);
+			model.addAttribute("cartItems", cartList.size());
+		}
+	}
 
 	@RequestMapping("/index")
 	public String showPage(Model model) {

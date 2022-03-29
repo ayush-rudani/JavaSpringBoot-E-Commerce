@@ -19,7 +19,7 @@
 	<!-- Begin Body Wrapper -->
 	<div class="body-wrapper">
 		<!-- Begin Header Area -->
-		<%@include file="header.html"%>
+		<%@include file="main-header.jsp"%>
 		<!-- Header Area End Here -->
 		<!-- Begin Li's Breadcrumb Area -->
 		<div class="breadcrumb-area">

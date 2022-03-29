@@ -133,11 +133,11 @@
 									<!-- single-product-wrap start -->
 
 									<c:forEach var="pro" items="${cat}">
-                                    
+
 										<div class="col-lg-12">
 											<div class="single-product-wrap">
 												<div class="product-image">
-													<a href="product?pid=${pro.id }"> <img
+													<a href="product/${pro.id}"> <img
 														src="<%= request.getContextPath() %>/uploads/products/${pro.image}"
 														alt="Product Image"> <%-- </a> <span class="sticker">New</span> --%>
 												</div>
@@ -161,13 +161,13 @@
 															<a class="product_name" href="product?pid=${pro.id }">${pro.name}</a>
 														</h4>
 														<div class="price-box">
-															<span class="new-price">${pro.price}</span>
+															<span class="new-price">&#8377; ${pro.price}</span>
 														</div>
 													</div>
 													<div class="add-actions">
 														<ul class="add-actions-link">
-															<li class="add-cart active"><a href="add-to-cart">Add
-																	to cart</a></li>
+															<li class="add-cart active"><a
+																href="add-to-cart/${pro.id}">Add to cart</a></li>
 															<li><a class="links-details" href="wishlist.html"><i
 																	class="fa fa-heart-o"></i></a></li>
 															<li><a href="#" title="quick view"

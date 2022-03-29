@@ -15,7 +15,7 @@
 	<div class="body-wrapper">
 
 		<!-- Header Area End Here -->
-		<%@include file="header.html"%>
+		<%@include file="main-header.jsp"%>
 		<!-- Header Area End Here -->
 
 

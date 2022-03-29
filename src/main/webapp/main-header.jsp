@@ -1,4 +1,4 @@
-f<header>
+<header>
 	<!-- Begin Header Top Area -->
 	<div class="header-top">
 		<div class="container">
@@ -7,8 +7,7 @@ f<header>
 				<div class="col-lg-3 col-md-4">
 					<div class="header-top-left">
 						<ul class="phone-wrap">
-							<li><span>Telephone Enquiry:</span><a href="#">(+91) 999
-									999 9999</a></li>
+							<li><span>Telephone Enquiry:</span><a href="#">(+91) 98982 59898</a></li>
 						</ul>
 					</div>
 				</div>
@@ -78,8 +77,8 @@ f<header>
 					<div class="header-middle-right">
 						<ul class="hm-menu">
 							<!-- Begin Header Middle Wishlist Area -->
-							<li class="hm-wishlist"><a href="account-details">
-									<i class="fa fa-user-circle-o"></i>
+							<li class="hm-wishlist"><a href="account-details"> <i
+									class="fa fa-user-circle-o"></i>
 							</a></li>
 
 							<li class="hm-wishlist"><a href="logout"> <i
@@ -89,41 +88,48 @@ f<header>
 							<!-- Begin Header Mini Cart Area -->
 							<li class="hm-minicart">
 								<div class="hm-minicart-trigger">
-									<span class="item-icon"></span> <span class="item-text">Â£80.00
-										<span class="cart-item-count">2</span>
+									<span class="item-icon"></span> <span class="item-text">${cartTotal}
+										<span class="cart-item-count">${cartItems}</span>
 									</span>
 								</div> <span></span>
 								<div class="minicart">
 									<ul class="minicart-product-list">
-										<li><a href="product"
+										<li>
+											<%-- <a href="product"
 											class="minicart-product-image"> <img
 												src="images/product/small-size/5.jpg" alt="cart products">
+										</a> --%> <a href="product" class="minicart-product-image">
+												<img
+												src="<%= request.getContextPath() %>/uploads/products/${cartItem1.product.image}"
+												alt="cart products">
 										</a>
 											<div class="minicart-product-details">
 												<h6>
-													<a href="product">Aenean eu tristique</a>
+													<a href="product">${cartItem1.product.name}</a>
 												</h6>
-												<span>Â£40 x 1</span>
+												<span>${cartItem1.product.price}</span>
 											</div>
 											<button class="close" title="Remove">
 												<i class="fa fa-close"></i>
-											</button></li>
-										<li><a href="product"
-											class="minicart-product-image"> <img
-												src="images/product/small-size/6.jpg" alt="cart products">
+											</button>
+										</li>
+										<li><a href="product" class="minicart-product-image">
+												<img
+												src="<%= request.getContextPath() %>/uploads/products/${cartItem1.product.image}"
+												alt="cart products">
 										</a>
 											<div class="minicart-product-details">
 												<h6>
-													<a href="product">Aenean eu tristique</a>
+													<a href="product">${cartItem1.product.name}</a>
 												</h6>
-												<span>Â£40 x 1</span>
+												<span>${cartItem1.product.name}</span>
 											</div>
 											<button class="close" title="Remove">
 												<i class="fa fa-close"></i>
 											</button></li>
 									</ul>
 									<p class="minicart-total">
-										SUBTOTAL: <span>Â£80.00</span>
+										SUBTOTAL: <span>${cartTotal}</span>
 									</p>
 									<div class="minicart-button">
 										<a href="cart"
@@ -160,8 +166,7 @@ f<header>
 										<li><a href="#">Account</a>
 											<ul>
 												<li><a href="account-details">My Account</a></li>
-												<li><a href="purchase-history">Purchase
-														History</a></li>
+												<li><a href="purchase-history">Purchase History</a></li>
 												<li><a href="logout">Log Out</a></li>
 											</ul></li>
 										<li><a href="#">Admin Panel</a>

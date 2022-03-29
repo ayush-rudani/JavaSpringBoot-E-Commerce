@@ -72,7 +72,7 @@ public class UserController {
 		Cart cart = new Cart(user.getId(), product);
 		cartService.saveCart(cart);
 		System.out.println(cart);
-		return "redirect:/cart";
+		return "redirect:/index";
 	}
 
 	@GetMapping("/cart/remove/{id}")
