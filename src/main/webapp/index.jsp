@@ -132,7 +132,7 @@
 									<!-- single-product-wrap start -->
 
 									<c:forEach var="pro" items="${cat}">
-                                    
+
 										<div class="col-lg-12">
 											<div class="single-product-wrap">
 												<div class="product-image">
@@ -165,8 +165,8 @@
 													</div>
 													<div class="add-actions">
 														<ul class="add-actions-link">
-															<li class="add-cart active"><a href="add-to-cart/${pro.id}">Add
-																	to cart</a></li>
+															<li class="add-cart active"><a
+																href="add-to-cart/${pro.id}">Add to cart</a></li>
 															<li><a class="links-details" href="wishlist.html"><i
 																	class="fa fa-heart-o"></i></a></li>
 															<li><a href="#" title="quick view"
