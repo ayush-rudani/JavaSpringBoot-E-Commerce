@@ -89,8 +89,8 @@
 											<c:if test="${fuser.user_type == 'USER'}">
 												<div class="row">
 													<div class="col">
-														<button class="btn btn-outline-warning w-100">Update
-															Details</button>
+														<a href=""><button class="btn btn-outline-warning w-100">Update
+															Details</button></a>
 													</div>
 													<div class="col">
 														<a href="update-password"><button

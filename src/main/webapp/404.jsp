@@ -8,7 +8,6 @@
 <%@include file="css-link.html"%>
 </head>
 <body>
-
 	<!-- Begin Body Wrapper -->
 	<div class="body-wrapper">
 		<!-- Header Area End Here -->
