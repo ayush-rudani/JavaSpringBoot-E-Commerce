@@ -80,7 +80,7 @@
 									</div>
 									<div class="col-md-6 mb-20 form-control-file">
 										<label>Product Picture</label> 
-										<input class="mb-0" type="file" placeholder="Confirm Password" name="file" id="file" accept="image/png, image/jpeg, img/jpg" >
+										<input class="mb-0" type="file" placeholder="Confirm Password" name="file" id="file" accept="image/png, image/jpeg, img/jpg" required>
 									</div> 
 
 									<div class="col-12">

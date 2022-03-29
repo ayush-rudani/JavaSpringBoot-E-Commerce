@@ -1,3 +1,4 @@
+<%@page import="org.springframework.http.HttpRequest"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -9,7 +10,7 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Shopping Cart || limupa - Digital Products Store eCommerce Bootstrap 4 Template</title>
+        <title><%= request.getContextPath() %></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <%@include file="css-link.html"%>
@@ -440,7 +441,7 @@
                                         <c:forEach var="i" items="${purchases}">
                                             <tr>
                                                 <td class="li-product-remove"><a href="remove-purchase/${i.id}"><i class="fa fa-times"></i></a></td>
-                                                <td class="li-product-thumbnail"><a href="#"><img src="images/product/small-size/5.jpg" alt="Li's Product Image"></a></td>
+                                                <td class="li-product-thumbnail"><a href="#"><img src="<%= request.getContextPath() %>/uploads/products/${i.product.image}" alt="Li's Product Image"></a></td>
                                                 <td class="li-product-name"><a href="#">${i.product.category.category_name}</a></td>
                                                 <td class="li-product-name"><a href="#">${i.product.name }</a>
                                                     <div class="text-justify p-md-3">

@@ -20,7 +20,7 @@ public class CartService {
 	}
 
 	public List<Cart> fetchCartListByUserId(int user_id) {
-		return cartRepository.getCartListByUserId(user_id);
+		return cartRepository.findAllByUserid(user_id);
 	}
 	
 	public void removeFromCart(int id) {
