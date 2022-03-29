@@ -129,9 +129,7 @@
 							</div>
 							<div class="row">
 								<div class="product-active owl-carousel">
-
 									<!-- single-product-wrap start -->
-
 									<c:forEach var="pro" items="${cat}">
 
 										<div class="col-lg-12">
@@ -143,20 +141,6 @@
 												</div>
 												<div class="product_desc">
 													<div class="product_desc_info">
-														<%-- <div class="product-review">
-															<h5 class="manufacturer">
-																<a href="shop-left-sidebar.html">Graphic Corner</a>
-															</h5>
-															<div class="rating-box">
-																<ul class="rating">
-																	<li><i class="fa fa-star-o"></i></li>
-																	<li><i class="fa fa-star-o"></i></li>
-																	<li><i class="fa fa-star-o"></i></li>
-																	<li class="no-star"><i class="fa fa-star-o"></i></li>
-																	<li class="no-star"><i class="fa fa-star-o"></i></li>
-																</ul>
-															</div>
-														</div> --%>
 														<h4>
 															<a class="product_name" href="product?pid=${pro.id }">${pro.name}</a>
 														</h4>
@@ -193,6 +177,7 @@
 
 
 		<!-- Begin Li's ${pageContext.request.contextPath}/static Home Area -->
+		<hr class="mt-100">
 		<div class="li-home">
 			<div class="container">
 				<div class="row">

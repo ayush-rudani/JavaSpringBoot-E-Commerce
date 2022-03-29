@@ -41,22 +41,22 @@ public class MainController {
 	@Autowired
 	private CartService cartService;
 
-	@ModelAttribute
-	public void miniCart(Model model, HttpSession session) {
-		User user = (User) session.getAttribute("fuser");
-		if (user != null && (!model.containsAttribute("cartItem1"))) {
-			List<Cart> cartList = new ArrayList<Cart>();
-			cartList = cartService.fetchCartListByUserId(user.getId());
-			double cartTotal = 0;
-			for (Cart cart : cartList) {
-				cartTotal += cart.getProduct().getPrice();
-			}
-			model.addAttribute("cartItem1", cartList.get(0));
-			model.addAttribute("cartItem2", cartList.get(1));
-			model.addAttribute("cost", cartTotal);
-			model.addAttribute("cartItems", cartList.size());
-		}
-	}
+	// @ModelAttribute
+	// public void miniCart(Model model, HttpSession session) {
+	// User user = (User) session.getAttribute("fuser");
+	// if (user != null && (!model.containsAttribute("cartItem1"))) {
+	// List<Cart> cartList = new ArrayList<Cart>();
+	// cartList = cartService.fetchCartListByUserId(user.getId());
+	// double cartTotal = 0;
+	// for (Cart cart : cartList) {
+	// cartTotal += cart.getProduct().getPrice();
+	// }
+	// model.addAttribute("cartItem1", cartList.get(0));
+	// model.addAttribute("cartItem2", cartList.get(1));
+	// model.addAttribute("cost", cartTotal);
+	// model.addAttribute("cartItems", cartList.size());
+	// }
+	// }
 
 	@RequestMapping("/index")
 	public String showPage(Model model) {
@@ -76,6 +76,12 @@ public class MainController {
 			model.addAttribute("productList", productList);
 		}
 		return "index";
+	}
+
+	@RequestMapping("/index-list")
+	public String showIndexList(Model model) {
+		model.addAttribute("products", productService.fetchProductList());
+		return "index-list";
 	}
 
 	@PostMapping("/do_login")
@@ -108,7 +114,8 @@ public class MainController {
 	}
 
 	@PostMapping("/do_register")
-	public String registerUser(@ModelAttribute User user, BindingResult result, Model model, HttpSession session, @RequestParam("file") MultipartFile file, HttpServletRequest request) {
+	public String registerUser(@ModelAttribute User user, BindingResult result, Model model, HttpSession session,
+			@RequestParam("file") MultipartFile file, HttpServletRequest request) {
 
 		if (result.hasErrors()) {
 			model.addAttribute("user", user);
@@ -123,27 +130,27 @@ public class MainController {
 		// user.setPassword();
 		// session.setAttribute("temp1", "hello user");
 		if (!file.isEmpty()) {
-            try {
-                String uploadsDir = "/uploads/users/";
-                String realPathtoUploads = request.getServletContext().getRealPath(uploadsDir);
-                if (!new File(realPathtoUploads).exists()) {
-                    new File(realPathtoUploads).mkdir();
-                }
+			try {
+				String uploadsDir = "/uploads/users/";
+				String realPathtoUploads = request.getServletContext().getRealPath(uploadsDir);
+				if (!new File(realPathtoUploads).exists()) {
+					new File(realPathtoUploads).mkdir();
+				}
 
-                String orgName = file.getOriginalFilename();
-                String fileName = Files.getNameWithoutExtension(orgName)
-                        + new java.sql.Timestamp(System.currentTimeMillis()).getTime();
-                String extension = Files.getFileExtension(orgName);
-                orgName = fileName + '.' + extension;
-                user.setImage(orgName);
-                String filePath = realPathtoUploads + orgName;
-                File dest = new File(filePath);
-                file.transferTo(dest);
-            } catch (Exception e) {
-                System.out.println("Exception: " + e.getMessage());
-            }
-        }
-		
+				String orgName = file.getOriginalFilename();
+				String fileName = Files.getNameWithoutExtension(orgName)
+						+ new java.sql.Timestamp(System.currentTimeMillis()).getTime();
+				String extension = Files.getFileExtension(orgName);
+				orgName = fileName + '.' + extension;
+				user.setImage(orgName);
+				String filePath = realPathtoUploads + orgName;
+				File dest = new File(filePath);
+				file.transferTo(dest);
+			} catch (Exception e) {
+				System.out.println("Exception: " + e.getMessage());
+			}
+		}
+
 		try {
 			userService.saveUser(user);
 		} catch (Exception e) {
