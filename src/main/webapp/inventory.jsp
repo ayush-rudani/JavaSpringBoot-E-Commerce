@@ -66,33 +66,26 @@
 													<i class="fa fa-sort"></i>
 												</button>
 											</th>
-											<th class="li-product-stock-status">Added Date&Time
-												<button class="border-0 bg-transparent text-black">
-													<i class="fa fa-sort"></i>
-												</button>
-											</th>
 											<th class="li-product-remove">Remove</th>
 										</tr>
 									</thead>
 									<tbody>
 										<c:forEach var="pro" items="${products}" varStatus="loop">
 											<tr>
-												<td class="li-product-remove">${loop.index}</td>
+												<td class="li-product-remove">${loop.index + 1}</td>
 												<td class="li-product-thumbnail"><a
 													href="/product?pid=${pro.id}"><img
-														src="images/product/small-size/5.jpg"></a></td>
+														src="<%= request.getContextPath() %>/uploads/products/${pro.image}"></a></td>
 												<td class="li-product-name"><a href="#">${pro.category.category_name}</a></td>
 												<td class="li-product-name font-weight-bold"><a
-													href="#">${pro.name}</a>
+													href="/product?pid=${pro.id}">${pro.name}</a>
 													<div class="text-center p-md-3">
 														<ul>
 															<li>${pro.description}</li>
 														</ul>
 													</div></td>
 												<td class="li-product-price"><span class="amount">${pro.price}</span></td>
-												<td class="product-subtotal"><span class="amount">25-04-2023</span><br>
-													<span class="amount">12:12:12 PM</span></td>
-												<td class="li-product-remove"><a href="#"><i
+												<td class="li-product-remove"><a href="/remove-product?pid=${pro.id}"><i
 														class="fa fa-times"></i></a></td>
 											</tr>
 										</c:forEach>
@@ -125,7 +118,6 @@
 									<div class="cart-page-total">
 										<h2>Summary</h2>
 										<ul>
-											<li>Total Number of Products (Available) <span>50,000</span></li>
 											<li>Total Number of Products (Till Now) <span>60,000</span></li>
 										</ul>
 										<a href="index.html">Home</a>

@@ -3,6 +3,7 @@ package com.ec.controllers;
 import java.io.File;
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -95,5 +96,11 @@ public class ProductController {
         session.setAttribute("message", new Message("Category added successfully", "alert-success", "add-category"));
         return "redirect:/add-category";
     }
-
+    
+    @GetMapping("/inventory")
+    public String showInventroy(Model model) {
+    	List<Product> productList = productService.fetchAllProduct();
+    	model.addAttribute("products", productList);
+    	return "inventory";
+    }
 }
