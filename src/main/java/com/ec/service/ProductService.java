@@ -2,6 +2,7 @@ package com.ec.service;
 
 import java.util.List;
 
+import com.ec.models.Category;
 import com.ec.models.Product;
 import com.ec.repository.ProductRepository;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProductService {
-	@Autowired
+    @Autowired
     private ProductRepository productRepository;
 
     public Product saveProduct(Product product) {
@@ -37,6 +38,14 @@ public class ProductService {
 
     public void deleteProduct(int id) {
         productRepository.deleteById(id);
+    }
+
+    public List<Product> fetchProductListByCategory(Category category) {
+        return productRepository.findTop5ProductByCategory(category);
+    }
+
+    public List<Product> fetchAllProduct() {
+        return productRepository.findAllByOrderByNameAsc();
     }
 
 }

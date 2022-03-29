@@ -22,7 +22,7 @@
 			<div class="container">
 				<div class="breadcrumb-content">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index">Home</a></li>
 						<li class="active">Current Inventory</li>
 					</ul>
 				</div>
@@ -66,60 +66,33 @@
 													<i class="fa fa-sort"></i>
 												</button>
 											</th>
-											<th class="li-product-stock-status">Added Date&Time
-												<button class="border-0 bg-transparent text-black">
-													<i class="fa fa-sort"></i>
-												</button>
-											</th>
 											<th class="li-product-remove">Remove</th>
 										</tr>
 									</thead>
 									<tbody>
 										<c:forEach var="pro" items="${products}" varStatus="loop">
 											<tr>
-												<td class="li-product-remove">${loop.index}</td>
+												<td class="li-product-remove">${loop.index + 1}</td>
 												<td class="li-product-thumbnail"><a
 													href="/product?pid=${pro.id}"><img
-														src="images/product/small-size/5.jpg"></a></td>
+														src="<%= request.getContextPath() %>/uploads/products/${pro.image}"></a></td>
 												<td class="li-product-name"><a href="#">${pro.category.category_name}</a></td>
 												<td class="li-product-name font-weight-bold"><a
-													href="#">${pro.name}</a>
+													href="/product?pid=${pro.id}">${pro.name}</a>
 													<div class="text-center p-md-3">
 														<ul>
 															<li>${pro.description}</li>
 														</ul>
 													</div></td>
 												<td class="li-product-price"><span class="amount">${pro.price}</span></td>
-												<td class="product-subtotal"><span class="amount">25-04-2023</span><br>
-													<span class="amount">12:12:12 PM</span></td>
-												<td class="li-product-remove"><a href="#"><i
+												<td class="li-product-remove"><a href="/remove-product?pid=${pro.id}"><i
 														class="fa fa-times"></i></a></td>
 											</tr>
 										</c:forEach>
 									</tbody>
 								</table>
 							</div>
-							<div class="row">
-								<div class="col-12">
-									<!-- Begin Li's Pagination Area -->
-									<div class="col-lg-12">
-										<div class="li-paginatoin-area text-center pt-25">
-											<div class="row">
-												<div class="col-lg-12">
-													<ul class="li-pagination-box">
-														<li><a class="Previous" href="#">Previous</a></li>
-														<li class="active"><a href="#">1</a></li>
-														<li><a href="#">2</a></li>
-														<li><a href="#">3</a></li>
-														<li><a class="Next" href="#">Next</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Li's Pagination End Here Area -->
-								</div>
-							</div>
+							
 							<div class="row">
 								<div class="col-md-5 ml-auto">
 									<div class="cart-page-total">
@@ -128,7 +101,7 @@
 											<li>Total Number of Products (Available) <span>50,000</span></li>
 											<li>Total Number of Products (Till Now) <span>60,000</span></li>
 										</ul>
-										<a href="index.html">Home</a>
+										<a href="index">Home</a>
 									</div>
 								</div>
 							</div>

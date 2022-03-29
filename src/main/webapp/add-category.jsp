@@ -22,7 +22,7 @@
 			<div class="container">
 				<div class="breadcrumb-content">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index">Home</a></li>
 						<li class="active">Login Register</li>
 					</ul>
 				</div>
@@ -36,18 +36,16 @@
 			<div class="container">
 				<div class="row">
 
-					<c:if test="${sessionScope.message != null}">
-						<div class="col-md-12 alert ${sessionScope.message.type}"
-							role="alert">
-							${sessionScope.message.content}
-							<%
-							session.removeAttribute("message");
-							%>
-						</div>
-					</c:if>
-
-
 					<div class="col-12">
+						<c:if test="${sessionScope.message != null}">
+							<div class="mt-20 col-md-12 alert ${sessionScope.message.type}"
+								role="alert">
+								${sessionScope.message.content}
+								<%
+								session.removeAttribute("message");
+								%>
+							</div>
+						</c:if>
 						<form action="saveCateory" method="POST">
 							<div class="login-form">
 								<h4 class="login-title">Add a Category</h4>
