@@ -41,94 +41,98 @@ public class UserController {
 	private ProductService productService;
 	@Autowired
 	private PurchaseService purchaseService;
-	
+
 	@GetMapping("/account-details")
 	public String accountDetails(Model model, HttpSession session) {
-		 model.addAttribute("user", session.getAttribute("fuser"));
+		model.addAttribute("user", session.getAttribute("fuser"));
 		return "account-details";
 	}
-	
+
 	@GetMapping("/cart")
 	public String showCart(HttpSession session, Model model) {
-		User user = (User)session.getAttribute("fuser");
+		User user = (User) session.getAttribute("fuser");
 		List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
 		double cost = 0;
-		for(Cart cart: cartList) {
+		for (Cart cart : cartList) {
 			cost += cart.getProduct().getPrice();
 		}
 		model.addAttribute("cartList", cartList);
 		model.addAttribute("cost", cost);
 		return "shopping-cart";
 	}
-	
+
 	@GetMapping("/add-to-cart/{product_id}")
 	public String addToCart(@PathVariable int product_id, HttpSession session) {
 		Product product = productService.getProductById(product_id);
-		User user = (User)session.getAttribute("fuser");
+		User user = (User) session.getAttribute("fuser");
 		Cart cart = new Cart(user.getId(), product);
 		cartService.saveCart(cart);
 		System.out.println(cart);
 		return "redirect:/cart";
 	}
-	
+
 	@GetMapping("/cart/remove/{id}")
 	public String removeProd(@PathVariable int id) {
 		cartService.removeFromCart(id);
 		return "redirect:/cart";
 	}
-	
+
 	@GetMapping("/checkout")
 	public String checkout(HttpSession session, Model model) {
 		User user = (User) session.getAttribute("fuser");
 		List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
-		
+
 		double cost = 0;
-		for(Cart cart: cartList) {
+		for (Cart cart : cartList) {
 			cost += cart.getProduct().getPrice();
 		}
 		model.addAttribute("checkOutList", cartList);
 
-		model.addAttribute("checkOutCost", cost);		
-		
+		model.addAttribute("checkOutCost", cost);
+
 		return "checkout";
 	}
-	
+
 	@PostMapping("/do-checkout")
-	public String checkoutConfirm(HttpSession session, Model model, @RequestParam(required=false, name = "ship-box", defaultValue = "-1") String shipBox, @RequestParam(required=false, name = "address") String address) {
+	public String checkoutConfirm(HttpSession session, Model model,
+			@RequestParam(required = false, name = "ship-box", defaultValue = "-1") String shipBox,
+			@RequestParam(required = false, name = "address") String address) {
 		User user = (User) session.getAttribute("fuser");
-		
+
 		java.util.Date temp_date = new java.util.Date();
 		Date date = new Date(temp_date.getTime());
 		Time time = new Time(temp_date.getTime());
-		
+
 		List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
-		
-		for(Cart cart: cartList) {	
+
+		for (Cart cart : cartList) {
 			Purchase purchase = null;
-			if(shipBox == "1") {
-				purchase = new Purchase(user.getId(), cart.getProduct(), date, time, address, cart.getProduct().getPrice());
-			}else {
-				purchase = new Purchase(user.getId(), cart.getProduct(), date, time, user.getAddress(), cart.getProduct().getPrice());
+			if (shipBox == "1") {
+				purchase = new Purchase(user.getId(), cart.getProduct(), date, time, address,
+						cart.getProduct().getPrice());
+			} else {
+				purchase = new Purchase(user.getId(), cart.getProduct(), date, time, user.getAddress(),
+						cart.getProduct().getPrice());
 			}
 			purchaseService.savePurchase(purchase);
 		}
-		
+
 		cartService.checkOut(user.getId());
 		return "redirect:/index";
 	}
-	
+
 	@GetMapping("/purchase-history")
 	public String purchaseHistory(HttpSession session, Model model) {
 		User user = (User) session.getAttribute("fuser");
-		
+
 		List<Purchase> purchaseList = purchaseService.fetchPurchaseListByUserId(user.getId());
 		double cost = 0;
 		int count = 0;
-		for(Purchase p: purchaseList) {
+		for (Purchase p : purchaseList) {
 			cost += p.getPrice();
 			count++;
 		}
-		
+
 		model.addAttribute("purchases", purchaseList);
 		model.addAttribute("purchaseCost", cost);
 		model.addAttribute("purchaseCount", count);

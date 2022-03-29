@@ -1957,7 +1957,12 @@ textarea:focus {
   transition: all 0.3s ease-in-out;
   color: #242424;
 }
-.hb-menu nav > ul > li:nth-child(n + 5) > a::after {
+
+html{
+	scroll-behavior: smooth;
+}
+
+.hb-menu nav > ul > li:nth-child(n + 4) > a::after {
   content: none;
 }
 .hb-menu nav > ul > li:hover a::after {

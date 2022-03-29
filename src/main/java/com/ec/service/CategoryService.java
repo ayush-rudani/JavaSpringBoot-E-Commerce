@@ -26,4 +26,8 @@ public class CategoryService {
 		return (List<Category>) categoryRepository.findAll();
 	}
 
+	// public List<Product> fetchProductListByCategoryId(int id) {
+	// return categoryRepository.fetchProductListByCategoryId(id);
+	// }
+
 }

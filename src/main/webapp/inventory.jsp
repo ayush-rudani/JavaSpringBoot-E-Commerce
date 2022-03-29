@@ -22,7 +22,7 @@
 			<div class="container">
 				<div class="breadcrumb-content">
 					<ul>
-						<li><a href="index.html">Home</a></li>
+						<li><a href="index">Home</a></li>
 						<li class="active">Current Inventory</li>
 					</ul>
 				</div>
@@ -92,27 +92,7 @@
 									</tbody>
 								</table>
 							</div>
-							<div class="row">
-								<div class="col-12">
-									<!-- Begin Li's Pagination Area -->
-									<div class="col-lg-12">
-										<div class="li-paginatoin-area text-center pt-25">
-											<div class="row">
-												<div class="col-lg-12">
-													<ul class="li-pagination-box">
-														<li><a class="Previous" href="#">Previous</a></li>
-														<li class="active"><a href="#">1</a></li>
-														<li><a href="#">2</a></li>
-														<li><a href="#">3</a></li>
-														<li><a class="Next" href="#">Next</a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!-- Li's Pagination End Here Area -->
-								</div>
-							</div>
+							
 							<div class="row">
 								<div class="col-md-5 ml-auto">
 									<div class="cart-page-total">
@@ -120,7 +100,7 @@
 										<ul>
 											<li>Total Number of Products (Till Now) <span>60,000</span></li>
 										</ul>
-										<a href="index.html">Home</a>
+										<a href="index">Home</a>
 									</div>
 								</div>
 							</div>

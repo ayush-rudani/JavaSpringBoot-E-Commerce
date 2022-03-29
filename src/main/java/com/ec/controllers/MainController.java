@@ -1,14 +1,18 @@
 package com.ec.controllers;
 
 import java.sql.SQLIntegrityConstraintViolationException;
-
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import com.ec.def.Message;
+import com.ec.models.Category;
+import com.ec.models.Product;
 import com.ec.models.User;
+import com.ec.service.CartService;
+import com.ec.service.CategoryService;
+import com.ec.service.ProductService;
 import com.ec.service.UserService;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,10 +28,28 @@ public class MainController {
 
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private CategoryService categoryService;
+	@Autowired
+	private ProductService productService;
 
 	@RequestMapping("/index")
 	public String showPage(Model model) {
 		model.addAttribute("user", new User());
+
+		if ((!model.containsAttribute("categories")) && (!model.containsAttribute("productList"))) {
+			List<Category> categories = categoryService.fetchCategoryList();
+			List<List<Product>> productList = new ArrayList<List<Product>>();
+
+			categories.forEach(category -> {
+				productList.add(productService.fetchProductListByCategory(category));
+				// category.setProductList(productList);
+			});
+
+			// System.out.println(productList.get(0).get(0));
+			// model.addAttribute("categories", categories);
+			model.addAttribute("productList", productList);
+		}
 		return "index";
 	}
 
@@ -50,7 +72,7 @@ public class MainController {
 		if (foundUser.getUser_type().equals("ADMIN")) {
 			return "redirect:/admin";
 		} else if (foundUser.getUser_type().equals("USER")) {
-//			return "redirect:/user";
+			// return "redirect:/user";
 			return "redirect:/account-details";
 		}
 		return "redirect:/signup";
@@ -78,11 +100,10 @@ public class MainController {
 		user.setUser_type("USER");
 		// user.setPassword();
 		// session.setAttribute("temp1", "hello user");
-		
-		try
-		{	
+
+		try {
 			userService.saveUser(user);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			session.setAttribute("message", new Message("Something went wrong!!", "alert-danger", "registration"));
 			return "redirect:/signup";
 		}
