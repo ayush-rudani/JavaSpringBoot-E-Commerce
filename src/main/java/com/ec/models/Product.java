@@ -4,10 +4,13 @@ import java.util.UUID;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+
 @Entity
 public class Product {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private int id;
 	@Column(nullable = false)
 	private String name;
@@ -17,6 +20,7 @@ public class Product {
 	private String description;
 	private String image;
 	@ManyToOne
+	@Cascade(CascadeType.DELETE)
 	private Category category;
 
 	public Product() {

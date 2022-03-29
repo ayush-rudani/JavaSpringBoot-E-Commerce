@@ -1,7 +1,11 @@
 package com.ec.controllers;
 
+import java.io.File;
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.UUID;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.ec.def.Message;
@@ -9,6 +13,7 @@ import com.ec.models.Category;
 import com.ec.models.Product;
 import com.ec.service.CategoryService;
 import com.ec.service.ProductService;
+import com.google.common.io.Files;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +23,14 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 // @RequestMapping("/admin")
 public class ProductController {
-    @Autowired
+	@Autowired
+    private HttpServletRequest request;
+	@Autowired
     private ProductService productService;
     @Autowired
     private CategoryService categoryService;
@@ -36,8 +44,29 @@ public class ProductController {
     }
 
     @PostMapping("/saveProduct")
-    public String addProduct(@ModelAttribute Product product, Model model, HttpSession session) {
-        productService.saveProduct(product);
+    public String addProduct(@ModelAttribute Product product, Model model, HttpSession session, @RequestParam("file") MultipartFile file) {
+    	if (!file.isEmpty()) {
+            try {
+                String uploadsDir = "/uploads/products/";
+                String realPathtoUploads =  request.getServletContext().getRealPath(uploadsDir);
+                if(! new File(realPathtoUploads).exists())
+                {
+                    new File(realPathtoUploads).mkdir();
+                }
+                
+                String orgName = file.getOriginalFilename();
+                String fileName = Files.getNameWithoutExtension(orgName) +  new java.sql.Timestamp(System.currentTimeMillis()).getTime();
+                String extension = Files.getFileExtension(orgName);
+                orgName = fileName + '.' + extension;
+                product.setImage(orgName);
+                String filePath = realPathtoUploads + orgName;
+                File dest = new File(filePath);
+                file.transferTo(dest);
+            }catch(Exception e) {
+            	System.out.println("Exception: "+ e.getMessage());
+            }
+    	}
+    	productService.saveProduct(product);
         session.setAttribute("message", new Message("Product added successfully", "alert-success", "add-product"));
         return "redirect:/add-product";
     }

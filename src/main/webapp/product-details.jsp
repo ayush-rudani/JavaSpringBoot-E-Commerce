@@ -127,9 +127,9 @@
 										<c:if test="${fuser.user_type == 'ADMIN'}">
 											<button class="add-to-cart" type="submit">Update
 												Product</button>
+												<a href="remove-product?pid=${product.id}"><button class="add-to-cart bg-danger text-white">Remove Product</button></a>
 										</c:if>
 
-										<!-- <a href="remove-product"><button class="add-to-cart bg-danger text-white">Remove Product</button></a> -->
 
 									</form>
 								</div>

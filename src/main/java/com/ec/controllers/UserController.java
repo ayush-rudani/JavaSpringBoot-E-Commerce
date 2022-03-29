@@ -116,4 +116,22 @@ public class UserController {
 		cartService.checkOut(user.getId());
 		return "redirect:/index";
 	}
+	
+	@GetMapping("/purchase-history")
+	public String purchaseHistory(HttpSession session, Model model) {
+		User user = (User) session.getAttribute("fuser");
+		
+		List<Purchase> purchaseList = purchaseService.fetchPurchaseListByUserId(user.getId());
+		double cost = 0;
+		int count = 0;
+		for(Purchase p: purchaseList) {
+			cost += p.getPrice();
+			count++;
+		}
+		
+		model.addAttribute("purchases", purchaseList);
+		model.addAttribute("purchaseCost", cost);
+		model.addAttribute("purchaseCount", count);
+		return "purchase-history";
+	}
 }

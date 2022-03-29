@@ -128,7 +128,10 @@
 									<div class="col-md-12 mb-20">
 										<label>Address</label> <textarea class="form-control" rows="5" cols="100" placeholder="Address goes here..." name="address"></textarea>
 									</div>
-										
+									
+									<!-- <div class="col-md-6 mb-20">
+										<label>Profile Picture</label> <input class="mb-0" type="file">
+									</div> -->
 									<div class="col-12">
 										<button class="register-button mt-0">Register</button>
 									</div>

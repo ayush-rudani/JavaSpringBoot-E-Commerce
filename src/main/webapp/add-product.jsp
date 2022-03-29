@@ -50,7 +50,7 @@
 
 					<div class="col-12">
 
-						<form action="saveProduct" method="POST">
+						<form action="saveProduct" method="POST" enctype='multipart/form-data'>
 							<div class="login-form">
 								<h4 class="login-title">Add a Product</h4>
 								<div class="row">
@@ -78,6 +78,10 @@
 										<label>Price</label> <input class="mb-0" type="text"
 											placeholder="Price in INR" name="price">
 									</div>
+									<div class="col-md-6 mb-20 form-control-file">
+										<label>Product Picture</label> 
+										<input class="mb-0" type="file" placeholder="Confirm Password" name="file" id="file" accept="image/png, image/jpeg, img/jpg" >
+									</div> 
 
 									<div class="col-12">
 										<button class="register-button mt-0">Add to Inventory</button>

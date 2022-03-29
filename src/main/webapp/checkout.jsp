@@ -56,7 +56,7 @@
 									<div class="ship-different-title">
 										<h3>
 											<label>Ship to a different address?</label> <input
-												id="ship-box" type="checkwbox" name="ship-box" value="1">
+												id="ship-box" type="checkbox" name="ship-box" value="1">
 										</h3>
 									</div>
 									<div id="ship-box-info" class="row">
