@@ -123,8 +123,7 @@
 									<%-- <span id="gaming"><%=cat.get(loop.index).getCategory().getCategory_Name()%></span> --%>
 								</h2>
 								<ul class="li-sub-category-list">
-									<li class="active"><a href="shop-left-sidebar.html">View
-											All</a></li>
+									<li class="active"><a href="">View All</a></li>
 								</ul>
 							</div>
 							<div class="row">
@@ -137,7 +136,7 @@
 										<div class="col-lg-12">
 											<div class="single-product-wrap">
 												<div class="product-image">
-													<a href="product-details"> <img
+													<a href="product/${pro.id}"> <img
 														src="<%= request.getContextPath() %>/uploads/products/${pro.image}"
 														alt="Product Image"> <%-- </a> <span class="sticker">New</span> --%>
 												</div>
@@ -158,15 +157,15 @@
 															</div>
 														</div> --%>
 														<h4>
-															<a class="product_name" href="product-details">${pro.name}</a>
+															<a class="product_name" href="product/${pro.id}">${pro.name}</a>
 														</h4>
 														<div class="price-box">
-															<span class="new-price">${pro.price}</span>
+															<span class="new-price">&#8377; ${pro.price}</span>
 														</div>
 													</div>
 													<div class="add-actions">
 														<ul class="add-actions-link">
-															<li class="add-cart active"><a href="add-to-cart">Add
+															<li class="add-cart active"><a href="add-to-cart/${pro.id}">Add
 																	to cart</a></li>
 															<li><a class="links-details" href="wishlist.html"><i
 																	class="fa fa-heart-o"></i></a></li>
