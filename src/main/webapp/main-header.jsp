@@ -7,7 +7,8 @@
 				<div class="col-lg-3 col-md-4">
 					<div class="header-top-left">
 						<ul class="phone-wrap">
-							<li><span>Telephone Enquiry:</span><a href="#">(+91) 98982 59898</a></li>
+							<li><span>Telephone Enquiry:</span><a href="#">(+91)
+									98982 59898</a></li>
 						</ul>
 					</div>
 				</div>
@@ -94,39 +95,39 @@
 								</div> <span></span>
 								<div class="minicart">
 									<ul class="minicart-product-list">
-										<li>
-											<%-- <a href="product"
-											class="minicart-product-image"> <img
-												src="images/product/small-size/5.jpg" alt="cart products">
-										</a> --%> <a href="product" class="minicart-product-image">
+
+										<%-- <c:forEach var="cartItem" items="cartList" varStatus="loop">
+											<c:if test="${loop.index <= 1}">
+												<li><a href="product" class="minicart-product-image">
+														<img
+														src="<%= request.getContextPath() %>/uploads/products/${cartItem.product.image}"
+														alt="cart products">
+												</a>
+													<div class="minicart-product-details">
+														<h6>
+															<a href="product">${cartItem.product.name}</a>
+														</h6>
+														<span>${cartItem.product.price}</span>
+													</div>
+													<button class="close" title="Remove">
+														<i class="fa fa-close"></i>
+													</button></li>
+											</c:if>
+										</c:forEach> --%>
+										<%-- <li><a href="product" class="minicart-product-image">
 												<img
-												src="<%= request.getContextPath() %>/uploads/products/${cartItem1.product.image}"
+												src="<%= request.getContextPath() %>/uploads/products/${cartItem2.product.image}"
 												alt="cart products">
 										</a>
 											<div class="minicart-product-details">
 												<h6>
-													<a href="product">${cartItem1.product.name}</a>
+													<a href="product">${cartItem2.product.name}</a>
 												</h6>
-												<span>${cartItem1.product.price}</span>
+												<span>${cartItem2.product.name}</span>
 											</div>
 											<button class="close" title="Remove">
 												<i class="fa fa-close"></i>
-											</button>
-										</li>
-										<li><a href="product" class="minicart-product-image">
-												<img
-												src="<%= request.getContextPath() %>/uploads/products/${cartItem1.product.image}"
-												alt="cart products">
-										</a>
-											<div class="minicart-product-details">
-												<h6>
-													<a href="product">${cartItem1.product.name}</a>
-												</h6>
-												<span>${cartItem1.product.name}</span>
-											</div>
-											<button class="close" title="Remove">
-												<i class="fa fa-close"></i>
-											</button></li>
+											</button></li> --%>
 									</ul>
 									<p class="minicart-total">
 										SUBTOTAL: <span>${cartTotal}</span>
@@ -161,7 +162,7 @@
 						<nav>
 							<ul>
 								<li class="megamenu-holder"><a href="#">Welcome,
-										$Username$</a>
+										${fuser.name}</a>
 									<ul class="megamenu hb-megamenu">
 										<li><a href="#">Account</a>
 											<ul>

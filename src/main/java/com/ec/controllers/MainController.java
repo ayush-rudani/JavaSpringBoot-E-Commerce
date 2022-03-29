@@ -44,17 +44,22 @@ public class MainController {
 	// @ModelAttribute
 	// public void miniCart(Model model, HttpSession session) {
 	// User user = (User) session.getAttribute("fuser");
-	// if (user != null && (!model.containsAttribute("cartItem1"))) {
-	// List<Cart> cartList = new ArrayList<Cart>();
-	// cartList = cartService.fetchCartListByUserId(user.getId());
+
+	// if (user != null) {
+	// List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
+	// // List<Product> productList = cartService.fetchProductList
 	// double cartTotal = 0;
+	// if (cartList.size() > 0) {
 	// for (Cart cart : cartList) {
 	// cartTotal += cart.getProduct().getPrice();
 	// }
-	// model.addAttribute("cartItem1", cartList.get(0));
-	// model.addAttribute("cartItem2", cartList.get(1));
-	// model.addAttribute("cost", cartTotal);
-	// model.addAttribute("cartItems", cartList.size());
+	// System.out.println(cartList.get(0));
+	// // session.setAttribute("cartItem1", cartList.get(0));
+	// // session.setAttribute("cartItem2", cartList.get(1));
+	// session.setAttribute("cartList", cartList);
+	// session.setAttribute("cartItems", cartList.size());
+	// session.setAttribute("cartTotal", cartTotal);
+	// }
 	// }
 	// }
 

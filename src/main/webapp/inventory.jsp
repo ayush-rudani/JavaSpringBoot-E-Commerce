@@ -75,7 +75,7 @@
 												<td class="li-product-remove">${loop.index + 1}</td>
 												<td class="li-product-thumbnail"><a
 													href="/product?pid=${pro.id}"><img
-														src="<%= request.getContextPath() %>/uploads/products/${pro.image}"></a></td>
+														src="<%= request.getContextPath() %>/uploads/products/${pro.image}" width="60" height="60"></a></td>
 												<td class="li-product-name"><a href="#">${pro.category.category_name}</a></td>
 												<td class="li-product-name font-weight-bold"><a
 													href="/product?pid=${pro.id}">${pro.name}</a>

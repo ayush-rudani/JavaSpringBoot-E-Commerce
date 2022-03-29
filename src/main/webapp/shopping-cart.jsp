@@ -55,7 +55,7 @@
 													href="/cart/remove/${i.id}"><i class="fa fa-times"></i></a></td>
 												<td class="li-product-thumbnail"><a href="#"><img
 														src="<%= request.getContextPath() %>/uploads/products/${i.product.image}"
-														alt="Li's Product Image"></a></td>
+														alt="Li's Product Image" width="60" height="60"></a></td>
 												<td class="li-product-subtotal"><a href="#">${i.product.name }</a>
 													<br>
 													<div class="li-product-name">
