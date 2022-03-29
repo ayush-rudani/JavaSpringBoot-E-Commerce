@@ -1,4 +1,4 @@
-f<header>
+<header>
 	<!-- Begin Header Top Area -->
 	<div class="header-top">
 		<div class="container">
