@@ -149,6 +149,7 @@
 										</a> <a href="checkout" class="li-button li-button-fullwidth">
 											<span>Checkout</span>
 										</a>
+										--%>
 									</div>
 								</div>
 							</li>

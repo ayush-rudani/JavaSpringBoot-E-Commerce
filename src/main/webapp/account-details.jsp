@@ -44,7 +44,7 @@
 							</c:if>
 
 							<c:if test="${fuser.user_type == 'ADMIN'}">
-								<h1 class="text-center mb-0">$USERNAME$'s Account Details</h1>
+								<h1 class="text-center mb-0">${fuser.name } Account Details</h1>
 							</c:if>
 							<form action="/updateDetails" method="POST" enctype='multipart/form-data'>
 								<div class="col">
