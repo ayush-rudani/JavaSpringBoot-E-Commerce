@@ -96,7 +96,7 @@
 								<div class="minicart">
 									<ul class="minicart-product-list">
 
-										<c:forEach var="cartItem" items="cartList" varStatus="loop">
+										<%-- <c:forEach var="cartItem" items="cartList" varStatus="loop">
 											<c:if test="${loop.index <= 1}">
 												<li><a href="product" class="minicart-product-image">
 														<img
@@ -139,6 +139,7 @@
 										</a> <a href="checkout" class="li-button li-button-fullwidth">
 											<span>Checkout</span>
 										</a>
+										--%>
 									</div>
 								</div>
 							</li>
