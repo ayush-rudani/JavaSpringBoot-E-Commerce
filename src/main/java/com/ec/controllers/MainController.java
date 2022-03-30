@@ -41,30 +41,32 @@ public class MainController {
 	@Autowired
 	private CartService cartService;
 
-	@ModelAttribute
-	public void miniCart(Model model, HttpSession session) {
-		User user = (User) session.getAttribute("fuser");
+	// @ModelAttribute
+	// public void miniCart(Model model, HttpSession session) {
 
-		if (user != null) {
-			List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
-			// List<Product> productList = cartService.fetchProductList
-			double cartTotal = 0;
-			if (cartList.size() > 0) {
-				for (Cart cart : cartList) {
-					cartTotal += cart.getProduct().getPrice();
-				}
-				System.out.println(cartList.get(0));
-				// session.setAttribute("cartItem1", cartList.get(0));
-				// session.setAttribute("cartItem2", cartList.get(1));
-				session.setAttribute("cartList", cartList);
-				session.setAttribute("cartItems", cartList.size());
-				session.setAttribute("cartTotal", cartTotal);
-			}
-		}
-	}
+	// User user = (User) session.getAttribute("fuser");
+
+	// if (user != null) {
+	// List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
+	// // List<Product> productList = cartService.fetchProductList
+	// double cartTotal = 0;
+	// if (cartList.size() > 0) {
+	// for (Cart cart : cartList) {
+	// cartTotal += cart.getProduct().getPrice();
+	// }
+	// System.out.println(cartList.get(0));
+	// // session.setAttribute("cartItem1", cartList.get(0));
+	// // session.setAttribute("cartItem2", cartList.get(1));
+	// session.setAttribute("cartList", cartList);
+	// session.setAttribute("cartItems", cartList.size());
+	// session.setAttribute("cartTotal", cartTotal);
+	// }
+	// }
+	// }
 
 	@RequestMapping("/index")
-	public String showPage(Model model) {
+	public String showPage(HttpSession session, Model model) {
+		// if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		model.addAttribute("user", new User());
 
 		if ((!model.containsAttribute("categories")) && (!model.containsAttribute("productList"))) {
@@ -84,7 +86,9 @@ public class MainController {
 	}
 
 	@RequestMapping("/index-list")
-	public String showIndexList(Model model) {
+	public String showIndexList(Model model, HttpSession session) {
+		if (session.getAttribute("fuser") == null)
+			return "redirect:/signup";
 		model.addAttribute("products", productService.fetchProductList());
 		return "index-list";
 	}

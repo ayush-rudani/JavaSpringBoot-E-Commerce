@@ -48,6 +48,7 @@ public class UserController {
 
 	@GetMapping("/account-details")
 	public String accountDetails(Model model, HttpSession session) {
+		if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		User user = (User) session.getAttribute("fuser");
 		if (user == null)
 			return "redirect:/signup";
@@ -57,6 +58,7 @@ public class UserController {
 
 	@GetMapping("/cart")
 	public String showCart(HttpSession session, Model model) {
+		if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		User user = (User) session.getAttribute("fuser");
 		List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
 		double cost = 0;
@@ -70,6 +72,7 @@ public class UserController {
 
 	@GetMapping("/add-to-cart/{product_id}")
 	public String addToCart(@PathVariable int product_id, HttpSession session) {
+		if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		Product product = productService.getProductById(product_id);
 		User user = (User) session.getAttribute("fuser");
 		Cart cart = new Cart(user.getId(), product);
@@ -79,13 +82,15 @@ public class UserController {
 	}
 
 	@GetMapping("/cart/remove/{id}")
-	public String removeProd(@PathVariable int id) {
+	public String removeProd(@PathVariable int id, HttpSession session) {
+		if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		cartService.removeFromCart(id);
 		return "redirect:/cart";
 	}
 
 	@GetMapping("/checkout")
 	public String checkout(HttpSession session, Model model) {
+		if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		User user = (User) session.getAttribute("fuser");
 		List<Cart> cartList = cartService.fetchCartListByUserId(user.getId());
 
@@ -104,6 +109,7 @@ public class UserController {
 	public String checkoutConfirm(HttpSession session, Model model,
 			@RequestParam(required = false, name = "ship-box", defaultValue = "-1") String shipBox,
 			@RequestParam(required = false, name = "address") String address) {
+		if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		User user = (User) session.getAttribute("fuser");
 
 		java.util.Date temp_date = new java.util.Date();
@@ -130,6 +136,7 @@ public class UserController {
 
 	@GetMapping("/purchase-history")
 	public String purchaseHistory(HttpSession session, Model model) {
+		if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		User user = (User) session.getAttribute("fuser");
 
 		List<Purchase> purchaseList = purchaseService.fetchPurchaseListByUserId(user.getId());

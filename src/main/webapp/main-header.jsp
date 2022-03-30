@@ -97,7 +97,9 @@
 									<ul class="minicart-product-list">
 
 										<c:forEach var="cartItem" items="cartList" varStatus="loop">
-											<c:if test="${loop.index<= 1}">
+
+											<c:if test="${loop.index <= 1}">
+
 												<li><a href="product" class="minicart-product-image">
 														<img
 														src="<%= request.getContextPath() %>/uploads/products/${cartItem.product.image}"
@@ -114,7 +116,11 @@
 													</button></li>
 											</c:if>
 										</c:forEach>
+
 										 <li><a href="product" class="minicart-product-image">
+
+										<li><a href="product" class="minicart-product-image">
+
 												<img
 												src="<%= request.getContextPath() %>/uploads/products/${cartItem2.product.image}"
 												alt="cart products">
@@ -127,7 +133,11 @@
 											</div>
 											<button class="close" title="Remove">
 												<i class="fa fa-close"></i>
+
 											</button></li> 
+
+											</button></li>
+
 									</ul>
 									<p class="minicart-total">
 										SUBTOTAL: <span>${cartTotal}</span>
@@ -170,6 +180,7 @@
 												<li><a href="purchase-history">Purchase History</a></li>
 												<li><a href="logout">Log Out</a></li>
 											</ul></li>
+											<c:if test="${fuser.user_type == 'ADMIN' }">
 										<li><a href="#">Admin Panel</a>
 											<ul>
 												<li><a href="manage-customer">Manage Customers</a></li>
@@ -177,6 +188,7 @@
 												<li><a href="inventory">View Inventory</a></li>
 												<li><a href="download-inventory">Download Inventory</a></li>
 											</ul></li>
+											</c:if>
 									</ul></li>
 								<li class="dropdown-holder"><a href="index">Home</a>
 									<ul class="hb-dropdown">

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.ec.def.Message;
 import com.ec.models.Category;
 import com.ec.models.Product;
+import com.ec.models.User;
 import com.ec.service.CategoryService;
 import com.ec.service.ProductService;
 import com.google.common.io.Files;
@@ -37,8 +38,10 @@ public class ProductController {
     private CategoryService categoryService;
 
     @GetMapping("/add-product")
-    public String showAddProduct(@ModelAttribute("product") Product product, Model model) {
-        model.addAttribute("product", new Product());
+    public String showAddProduct(@ModelAttribute("product") Product product, Model model, HttpSession session) {
+    	if(session.getAttribute("fuser") == null) return "redirect:/signup";
+    	if(((User)session.getAttribute("fuser")).getUser_type() == "USER") return "redirect:/index";
+    	model.addAttribute("product", new Product());
         model.addAttribute("categories", categoryService.fetchCategoryList());
         System.out.println("Rediecting to Product Form");
         return "add-product";
@@ -47,6 +50,8 @@ public class ProductController {
     @PostMapping("/saveProduct")
     public String addProduct(@ModelAttribute Product product, Model model, HttpSession session,
             @RequestParam("file") MultipartFile file) {
+    	if(session.getAttribute("fuser") == null) return "redirect:/signup";
+    	if(((User)session.getAttribute("fuser")).getUser_type() == "USER") return "redirect:/index";
         if (!file.isEmpty()) {
             try {
                 String uploadsDir = "/uploads/products/";
@@ -74,7 +79,8 @@ public class ProductController {
     }
 
     @GetMapping("/product/{pid}")
-    public String productDetails(@PathVariable int pid, Model model) {
+    public String productDetails(@PathVariable int pid, Model model, HttpSession session) {
+    	if(session.getAttribute("fuser") == null) return "redirect:/signup";
         Product product = (Product) productService.getProductById(pid);
         Category category = (Category) categoryService.getCategoryById(product.getCategory().getId());
         System.out.println(product.toString());
@@ -85,13 +91,17 @@ public class ProductController {
     }
 
     @GetMapping("/add-category")
-    public String showAddCategory(@ModelAttribute Category category, Model model) {
+    public String showAddCategory(@ModelAttribute Category category, Model model, HttpSession session) {
+    	if(session.getAttribute("fuser") == null) return "redirect:/signup";
+    	if(((User)session.getAttribute("fuser")).getUser_type() == "USER") return "redirect:/index";
         model.addAttribute("category", new Category());
         return "add-category";
     }
 
     @PostMapping("/saveCateory")
     public String saveCateory(@ModelAttribute("category") Category category, Model model, HttpSession session) {
+    	if(session.getAttribute("fuser") == null) return "redirect:/signup";
+    	if(((User)session.getAttribute("fuser")).getUser_type() == "USER") return "redirect:/index";
         category.setProducts(null);
         categoryService.saveCategory(category);
         session.setAttribute("message", new Message("Category added successfully", "alert-success", "add-category"));
@@ -99,14 +109,18 @@ public class ProductController {
     }
 
     @GetMapping("/inventory")
-    public String showInventroy(Model model) {
+    public String showInventroy(Model model, HttpSession session) {
+    	if(session.getAttribute("fuser") == null) return "redirect:/signup";
+    	if(((User)session.getAttribute("fuser")).getUser_type() == "USER") return "redirect:/index";
         List<Product> productList = productService.fetchAllProduct();
         model.addAttribute("products", productList);
         return "inventory";
     }
 
     @GetMapping("/product/remove/{id}")
-    public String removeProduct(@PathVariable("id") int id, Model model) {
+    public String removeProduct(@PathVariable("id") int id, Model model, HttpSession session) {
+    	if(session.getAttribute("fuser") == null) return "redirect:/signup";
+    	if(((User)session.getAttribute("fuser")).getUser_type() == "USER") return "redirect:/index";
         productService.deleteProduct(id);
         return "redirect:/inventory";
     }
