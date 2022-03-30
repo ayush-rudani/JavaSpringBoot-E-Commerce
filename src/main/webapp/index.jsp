@@ -123,8 +123,8 @@
 									<%-- <span id="gaming"><%=cat.get(loop.index).getCategory().getCategory_Name()%></span> --%>
 								</h2>
 								<ul class="li-sub-category-list">
-									<li class="active"><a href="shop-data/${cat.get(0).category.id}">View
-											All</a></li>
+									<li class="active"><a
+										href="shop-data/${cat.get(0).category.id}">View All</a></li>
 								</ul>
 							</div>
 							<div class="row">

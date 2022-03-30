@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>${errorCode} Error</title>
+<title>${errorCode}Error</title>
 <%@include file="css-link.html"%>
 </head>
 <body>
@@ -84,7 +84,7 @@
 			<div class="breadcrumb-content">
 				<ul>
 					<li><a href="index">Home</a></li>
-					<li class="active">${errorCode} Error</li>
+					<li class="active">${errorCode}Error</li>
 				</ul>
 			</div>
 		</div>

@@ -95,49 +95,26 @@
 								</div> <span></span>
 								<div class="minicart">
 									<ul class="minicart-product-list">
-										<c:if test="${logIn==1}">
-											<c:forEach var="cartItem" items="cartList" varStatus="loop">
-												<c:if test="${loop.index <= 1}">
+										<%-- <c:if test="${logIn==1}"> --%>
+										<c:forEach var="cartItem" items="${cartList}" varStatus="cl">
+											<c:if test="${cl.index <= 1}">
 
-													<li><a href="product" class="minicart-product-image">
-															<img
-															src="<%= request.getContextPath() %>/uploads/products/${cartItem.product.image}"
-															alt="cart products">
-													</a>
-														<div class="minicart-product-details">
-															<h6>
-																<a href="product">${cartItem.product.name}</a>
-															</h6>
-															<span>${cartItem.product.price}</span>
-														</div>
-														<button class="close" title="Remove">
-															<i class="fa fa-close"></i>
-														</button></li>
-												</c:if>
-											</c:forEach>
-										</c:if>
-
-										 <li><a href="product" class="minicart-product-image">
-
-										<li><a href="product" class="minicart-product-image">
-
-												<img
-												src="<%= request.getContextPath() %>/uploads/products/${cartItem2.product.image}"
-												alt="cart products">
-										</a>
-											<div class="minicart-product-details">
-												<h6>
-													<a href="product">${cartItem2.product.name}</a>
-												</h6>
-												<span>${cartItem2.product.name}</span>
-											</div>
-											<button class="close" title="Remove">
-												<i class="fa fa-close"></i>
-
-											</button></li> 
-
-											</button></li>
-
+												<li><a href="product" class="minicart-product-image">
+														<img
+														src="<%= request.getContextPath() %>/uploads/products/${cartItem.product.image}"
+														alt="cart products">
+												</a>
+													<div class="minicart-product-details">
+														<h6>
+															<a href="product">${cartItem.product.name}</a>
+														</h6>
+														<span>${cartItem.product.price}</span>
+													</div>
+													<button class="close" title="Remove">
+														<i class="fa fa-close"></i>
+													</button></li>
+											</c:if>
+										</c:forEach>
 									</ul>
 									<p class="minicart-total">
 										SUBTOTAL: <span>${cartTotal}</span>
@@ -149,7 +126,7 @@
 										</a> <a href="checkout" class="li-button li-button-fullwidth">
 											<span>Checkout</span>
 										</a>
-										
+
 									</div>
 								</div>
 							</li>
@@ -181,15 +158,16 @@
 												<li><a href="purchase-history">Purchase History</a></li>
 												<li><a href="logout">Log Out</a></li>
 											</ul></li>
-											<c:if test="${fuser.user_type == 'ADMIN' }">
-										<li><a href="#">Admin Panel</a>
-											<ul>
-												<li><a href="manage-customer">Manage Customers</a></li>
-												<li><a href="add-product">Add a Product</a></li>
-												<li><a href="inventory">View Inventory</a></li>
-												<li><a href="download-inventory">Download Inventory</a></li>
-											</ul></li>
-											</c:if>
+										<c:if test="${fuser.user_type == 'ADMIN' }">
+											<li><a href="#">Admin Panel</a>
+												<ul>
+													<li><a href="manage-customer">Manage Customers</a></li>
+													<li><a href="add-product">Add a Product</a></li>
+													<li><a href="inventory">View Inventory</a></li>
+													<li><a href="download-inventory">Download
+															Inventory</a></li>
+												</ul></li>
+										</c:if>
 									</ul></li>
 								<li class="dropdown-holder"><a href="index">Home</a>
 									<ul class="hb-dropdown">
