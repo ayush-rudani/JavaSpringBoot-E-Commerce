@@ -95,26 +95,27 @@
 								</div> <span></span>
 								<div class="minicart">
 									<ul class="minicart-product-list">
+										<c:if test="${logIn==1}">
+											<c:forEach var="cartItem" items="cartList" varStatus="loop">
+												<c:if test="${loop.index <= 1}">
 
-										<%-- <c:forEach var="cartItem" items="cartList" varStatus="loop">
-											<c:if test="${loop.index <= 1}">
-
-												<li><a href="product" class="minicart-product-image">
-														<img
-														src="<%= request.getContextPath() %>/uploads/products/${cartItem.product.image}"
-														alt="cart products">
-												</a>
-													<div class="minicart-product-details">
-														<h6>
-															<a href="product">${cartItem.product.name}</a>
-														</h6>
-														<span>${cartItem.product.price}</span>
-													</div>
-													<button class="close" title="Remove">
-														<i class="fa fa-close"></i>
-													</button></li>
-											</c:if>
-										</c:forEach>
+													<li><a href="product" class="minicart-product-image">
+															<img
+															src="<%= request.getContextPath() %>/uploads/products/${cartItem.product.image}"
+															alt="cart products">
+													</a>
+														<div class="minicart-product-details">
+															<h6>
+																<a href="product">${cartItem.product.name}</a>
+															</h6>
+															<span>${cartItem.product.price}</span>
+														</div>
+														<button class="close" title="Remove">
+															<i class="fa fa-close"></i>
+														</button></li>
+												</c:if>
+											</c:forEach>
+										</c:if>
 
 										 <li><a href="product" class="minicart-product-image">
 
