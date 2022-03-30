@@ -118,7 +118,7 @@ public class MainController {
 		// if (foundUser.getUser_type().equals("ADMIN") ||
 		// foundUser.getUser_type().equals("USER")) {
 		if (foundUser.getUser_type().equals("ADMIN"))
-			return "redirect:/admin";
+			return "admin";
 		else if (foundUser.getUser_type().equals("USER"))
 			return "redirect:/index";
 		// }

@@ -20,7 +20,7 @@ public class Product {
 	private String description;
 	private String image;
 	@ManyToOne
-	@Cascade(CascadeType.DELETE)
+	@Cascade(CascadeType.REFRESH)
 	private Category category;
 
 	public Product() {

@@ -85,7 +85,7 @@
 														</ul>
 													</div></td>
 												<td class="li-product-price"><span class="amount">${pro.price}</span></td>
-												<td class="li-product-remove"><a href="/remove-product?pid=${pro.id}"><i
+												<td class="li-product-remove"><a href="product/remove/${pro.id}"><i
 														class="fa fa-times"></i></a></td>
 											</tr>
 										</c:forEach>
