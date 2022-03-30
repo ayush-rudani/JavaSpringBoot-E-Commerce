@@ -96,8 +96,8 @@
 								<div class="minicart">
 									<ul class="minicart-product-list">
 
-										<%-- <c:forEach var="cartItem" items="cartList" varStatus="loop">
-											<c:if test="${loop.index <= 1}">
+										<c:forEach var="cartItem" items="cartList" varStatus="loop">
+											<c:if test="${loop.index<= 1}">
 												<li><a href="product" class="minicart-product-image">
 														<img
 														src="<%= request.getContextPath() %>/uploads/products/${cartItem.product.image}"
@@ -113,8 +113,8 @@
 														<i class="fa fa-close"></i>
 													</button></li>
 											</c:if>
-										</c:forEach> --%>
-										<%-- <li><a href="product" class="minicart-product-image">
+										</c:forEach>
+										 <li><a href="product" class="minicart-product-image">
 												<img
 												src="<%= request.getContextPath() %>/uploads/products/${cartItem2.product.image}"
 												alt="cart products">
@@ -127,7 +127,7 @@
 											</div>
 											<button class="close" title="Remove">
 												<i class="fa fa-close"></i>
-											</button></li> --%>
+											</button></li> 
 									</ul>
 									<p class="minicart-total">
 										SUBTOTAL: <span>${cartTotal}</span>
