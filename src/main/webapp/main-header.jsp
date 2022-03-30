@@ -95,8 +95,8 @@
 								</div> <span></span>
 								<div class="minicart">
 									<ul class="minicart-product-list">
-										<c:if test="${logIn==1}">
-											<c:forEach var="cartItem" items="cartList" varStatus="loop">
+										<% if(session.getAttribute("fuser") != null){ %>
+											<c:forEach var="cartItem" items="${cartList}" varStatus="loop">
 												<c:if test="${loop.index <= 1}">
 
 													<li><a href="product" class="minicart-product-image">
@@ -115,7 +115,7 @@
 														</button></li>
 												</c:if>
 											</c:forEach>
-										</c:if>
+										<%} %>
 
 										 <li><a href="product" class="minicart-product-image">
 
