@@ -43,11 +43,11 @@
 							<div class="col-md-5 mr-auto">
 								<div class="cart-page-total">
 									<c:if test="${fuser.user_type == 'ADMIN' }">
-									<h2>User Details (If user.role == ADMIN)</h2>
-									<ul>
-										<li>Username</li>
-										<li>E-Mail Address</li>
-									</ul>
+										<h2>User Details (If user.role == ADMIN)</h2>
+										<ul>
+											<li>Username</li>
+											<li>E-Mail Address</li>
+										</ul>
 									</c:if>
 								</div>
 							</div>
@@ -86,7 +86,7 @@
 											<tr>
 												<td class="li-product-thumbnail"><a href="#"><img
 														src="<%= request.getContextPath() %>/uploads/products/${i.product.image}"
-														alt="Li's Product Image"></a></td>
+														alt="Li's Product Image" width="60" height="60"></a></td>
 												<td class="li-product-name"><a href="#">${i.product.category.category_name}</a></td>
 												<td class="li-product-name"><a href="#">${i.product.name }</a>
 													<div class="text-justify p-md-3">
@@ -113,8 +113,8 @@
 												name="apply_coupon" value="Purchases" type="button">
 										</div>
 										<div class="coupon2">
-											<a href="index"><input class="button"
-												name="apply_coupon" value="Home" type="button"></a>
+											<a href="index"><input class="button" name="apply_coupon"
+												value="Home" type="button"></a>
 										</div>
 									</div>
 								</div>
