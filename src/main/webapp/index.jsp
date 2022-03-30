@@ -35,9 +35,9 @@
 										<h5>
 											Sale Offer <span>-20% Off</span> This Week
 										</h5>
-										<h2>Chamcham Galaxy S9 | S9+</h2>
+										<h2>Micro tech</h2>
 										<h3>
-											Starting at <span>$1209.00</span>
+											Starting at <span>&#8377;200</span>
 										</h3>
 										<div class="default-btn slide-btn">
 											<a class="links" href="shop-left-sidebar.html">Shopping
@@ -54,9 +54,9 @@
 										<h5>
 											Sale Offer <span>Black Friday</span> This Week
 										</h5>
-										<h2>Work Desk Surface Studio 2018</h2>
+										<h2>Clash of clans</h2>
 										<h3>
-											Starting at <span>$824.00</span>
+											Starting at <span>&#8377;8500.00</span>
 										</h3>
 										<div class="default-btn slide-btn">
 											<a class="links" href="shop-left-sidebar.html">Shopping
@@ -73,9 +73,9 @@
 										<h5>
 											Sale Offer <span>-10% Off</span> This Week
 										</h5>
-										<h2>Phantom 4 Pro+ Obsidian</h2>
+										<h2>Sony Liv</h2>
 										<h3>
-											Starting at <span>$1849.00</span>
+											Starting at <span>&#8377;2000.00</span>
 										</h3>
 										<div class="default-btn slide-btn">
 											<a class="links" href="shop-left-sidebar.html">Shopping
