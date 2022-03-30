@@ -63,9 +63,10 @@ public class MainController {
 //	}
 //	}
 
+
 	@RequestMapping("/index")
 	public String showPage(HttpSession session, Model model) {
-//		if(session.getAttribute("fuser") == null) return "redirect:/signup";
+		// if(session.getAttribute("fuser") == null) return "redirect:/signup";
 		model.addAttribute("user", new User());
 
 		if ((!model.containsAttribute("categories")) && (!model.containsAttribute("productList"))) {
@@ -86,7 +87,8 @@ public class MainController {
 
 	@RequestMapping("/index-list")
 	public String showIndexList(Model model, HttpSession session) {
-		if(session.getAttribute("fuser") == null) return "redirect:/signup";
+		if (session.getAttribute("fuser") == null)
+			return "redirect:/signup";
 		model.addAttribute("products", productService.fetchProductList());
 		return "index-list";
 	}
@@ -107,10 +109,15 @@ public class MainController {
 		request.getSession().setAttribute("fuser", foundUser);
 		model.addAttribute("user", foundUser);
 
-		if (foundUser.getUser_type().equals("ADMIN") || foundUser.getUser_type().equals("USER")) {
+		// if (foundUser.getUser_type().equals("ADMIN") ||
+		// foundUser.getUser_type().equals("USER")) {
+		if (foundUser.getUser_type().equals("ADMIN"))
+			return "redirect:/admin";
+		else if (foundUser.getUser_type().equals("USER"))
 			return "redirect:/index";
-		}
+		// }
 		return "redirect:/signup";
+
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)

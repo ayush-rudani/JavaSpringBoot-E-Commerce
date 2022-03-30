@@ -1,10 +1,12 @@
 package com.ec.controllers;
 
+import java.io.File;
 import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.ec.models.Cart;
@@ -16,6 +18,7 @@ import com.ec.service.CartService;
 import com.ec.service.ProductService;
 import com.ec.service.PurchaseService;
 import com.ec.service.UserService;
+import com.google.common.io.Files;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
@@ -29,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 // @RequestMapping("/user")
@@ -147,5 +151,43 @@ public class UserController {
 		model.addAttribute("purchaseCost", cost);
 		model.addAttribute("purchaseCount", count);
 		return "purchase-history";
+	}
+
+	@PostMapping("/updateDetails")
+	public String updateUser(@ModelAttribute("user") User user, @RequestParam("file") MultipartFile file,
+			HttpServletRequest request, HttpSession session) {
+		User fuser = (User) session.getAttribute("fuser");
+		if (!file.isEmpty()) {
+			try {
+				String uploadsDir = "/uploads/users/";
+				String realPathtoUploads = request.getServletContext().getRealPath(uploadsDir);
+				if (!new File(realPathtoUploads).exists()) {
+					new File(realPathtoUploads).mkdir();
+				}
+
+				String orgName = file.getOriginalFilename();
+				String fileName = Files.getNameWithoutExtension(orgName)
+						+ new java.sql.Timestamp(System.currentTimeMillis()).getTime();
+				String extension = Files.getFileExtension(orgName);
+				orgName = fileName + '.' + extension;
+				user.setImage(orgName);
+				String filePath = realPathtoUploads + orgName;
+				File dest = new File(filePath);
+				file.transferTo(dest);
+			} catch (Exception e) {
+
+			}
+		} else {
+			user.setImage(fuser.getImage());
+		}
+
+		user.setPassword(fuser.getPassword());
+		user.setUser_type(fuser.getUser_type());
+		user.setId(fuser.getId());
+		userService.updateUser(user);
+
+		fuser = user;
+		session.setAttribute("fuser", fuser);
+		return "account-details";
 	}
 }
