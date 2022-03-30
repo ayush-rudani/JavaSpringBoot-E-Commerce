@@ -91,11 +91,11 @@
 					<!-- Begin Li Banner Area -->
 					<div class="col-lg-4 col-md-4 text-center pt-xs-30">
 						<div class="li-banner">
-							<a href="#"> <img src="images/banner/1_1.jpg" alt="">
+							<a href="#"> <img src="images/freshbooks.png" alt="">
 							</a>
 						</div>
 						<div class="li-banner mt-15 mt-sm-30 mt-xs-30">
-							<a href="#"> <img src="images/banner/1_2.jpg" alt="">
+							<a href="#"> <img src="images/gta.jpg" alt="">
 							</a>
 						</div>
 					</div>
