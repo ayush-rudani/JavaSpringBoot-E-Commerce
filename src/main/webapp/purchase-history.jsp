@@ -42,11 +42,13 @@
 						<div class="row mb-sm-5">
 							<div class="col-md-5 mr-auto">
 								<div class="cart-page-total">
+									<c:if test="${fuser.user_type == 'ADMIN' }">
 									<h2>User Details (If user.role == ADMIN)</h2>
 									<ul>
 										<li>Username</li>
 										<li>E-Mail Address</li>
 									</ul>
+									</c:if>
 								</div>
 							</div>
 						</div>

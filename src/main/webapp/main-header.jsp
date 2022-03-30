@@ -82,7 +82,7 @@
 									class="fa fa-user-circle-o"></i>
 							</a></li>
 
-							<li class="hm-wishlist"><a href="logout"> <i
+							<li class="hm-wishlist"><a href="/logout"> <i
 									class="fa fa-sign-out"></i>
 							</a></li>
 							<!-- Header Middle Wishlist Area End Here -->
@@ -141,6 +141,7 @@
 									<p class="minicart-total">
 										SUBTOTAL: <span>${cartTotal}</span>
 									</p>
+									--%>
 									<div class="minicart-button">
 										<a href="cart"
 											class="li-button li-button-fullwidth li-button-dark"> <span>View
@@ -148,7 +149,7 @@
 										</a> <a href="checkout" class="li-button li-button-fullwidth">
 											<span>Checkout</span>
 										</a>
-										--%>
+										
 									</div>
 								</div>
 							</li>
@@ -199,22 +200,13 @@
 									</ul></li>
 								<li class="megamenu-holder"><a href="#">Categories</a>
 									<ul class="megamenu hb-megamenu">
-										<li><a href="#gaming">Gaming</a>
+										<li>
 											<ul>
-												<li><a href="">Action</a></li>
-												<li><a href="">Arcade</a></li>
-												<li><a href="">Board</a></li>
-												<li><a href="">Casino</a></li>
-												<li><a href="">Sports</a></li>
-											</ul></li>
-										<li><a href="#apps">Softwares</a>
-											<ul>
-												<li><a href="">Photography</a></li>
-												<li><a href="">Social</a></li>
-												<li><a href="">Tools</a></li>
-												<li><a href="">Productivity</a></li>
-												<li><a href="">Shopping</a></li>
-											</ul></li>
+											<c:forEach var="cat" items="${productList}">
+												<li><a href="#${cat.get(0).category.category_name}">${cat.get(0).category.category_name}</a></li>
+											</c:forEach>
+											</ul>
+										</li>
 									</ul></li>
 								<li><a href="about-us.html">About Us</a></li>
 								<li><a href="#footer">Contact</a></li>
