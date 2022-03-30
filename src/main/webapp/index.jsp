@@ -119,12 +119,12 @@
 						<div class="col-lg-12">
 							<div class="li-section-title">
 								<h2>
-									<span id="gaming">${cat.get(0).category.category_name}</span>
+									<span id="${cat.get(0).category.category_name}">${cat.get(0).category.category_name}</span>
 									<%-- <span id="gaming"><%=cat.get(loop.index).getCategory().getCategory_Name()%></span> --%>
 								</h2>
 								<ul class="li-sub-category-list">
-									<li class="active"><a
-										href="shop-data/${cat.get(0).category.id}">View All</a></li>
+									<li class="active"><a href="index-list">View
+											All</a></li>
 								</ul>
 							</div>
 							<div class="row">

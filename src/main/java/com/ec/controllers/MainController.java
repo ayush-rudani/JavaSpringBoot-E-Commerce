@@ -114,9 +114,6 @@ public class MainController {
 		request.getSession().setMaxInactiveInterval(60 * 60);
 		request.getSession().setAttribute("fuser", foundUser);
 		model.addAttribute("user", foundUser);
-		int logIn = (int) model.getAttribute("logIn");
-		logIn = 1;
-		model.addAttribute("logIn", logIn);
 
 		// if (foundUser.getUser_type().equals("ADMIN") ||
 		// foundUser.getUser_type().equals("USER")) {
