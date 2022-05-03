@@ -9,7 +9,7 @@ Data Base Name : jt-ec
 
 <h2>Java E-Commerce Website (Software) </h2>
 
- ## Technology Used :-
+ ## Languages & Tools Used :-
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)
 ![SB](https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot)
 ![Hibernate](https://img.shields.io/badge/Hibernate-59666C?style=for-the-badge&logo=Hibernate&logoColor=white)
